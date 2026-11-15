@@ -649,3 +649,7 @@ html { scroll-padding-top:94px; }
   .mobile-rating input[type=range]::-webkit-slider-thumb { transition:none; scale:1; }
   .mobile-rating input[type=range]::-moz-range-thumb { transition:none; scale:1; }
 }
+
+.assessment .result-handoff { margin-top:24px; font-size:15px; }
+.assessment .result-actions .button { flex:1 1 180px; min-width:0; justify-content:center; }
+@media print { .result-handoff { display:none; } }

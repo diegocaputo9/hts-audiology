@@ -29,7 +29,7 @@ export function Hero() {
   }, [reduce]);
   const toggle = () => { const el = video.current; if (!el) return; if (el.paused) el.play().then(() => setPlaying(true)).catch(() => setPlaying(false)); else { el.pause(); setPlaying(false); } };
   return <section className="hero" aria-labelledby="hero-heading">
-    <img className="hero-poster" src={publicAsset("/images/consultation.jpg")} width="1672" height="941" fetchPriority="high" alt="" />
+    <img className="hero-poster" src={publicAsset("/images/consultation.jpg")} width="1672" height="941" fetchPriority="high" alt="Illustrative audiology consultation with an older adult in a bright clinic" />
     <video ref={video} className="hero-video" loop muted playsInline preload="metadata" poster={publicAsset("/images/consultation.jpg")} width="1920" height="1080" aria-hidden="true"><source src={publicAsset("/video/patient-journey.mp4")} type="video/mp4" /></video>
     <div className="hero-shade" />
     <div className="hero-content"><h1 id="hero-heading">Life sounds<br />better connected.</h1><p>Expert hearing and tinnitus care.<br />Centered on you, here in Pagosa Springs.</p><Link href="/book/" className="button button-light">Let’s find your clarity <ArrowUpRight size={18} /></Link><a href="#meet-dr-melton" className="hero-secondary">Get to know your care team <ArrowDown size={15} /></a></div>

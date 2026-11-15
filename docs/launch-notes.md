@@ -16,7 +16,7 @@ The website is a complete static marketing build. Medical information and provid
 
 ## Patient data and hosting
 
-GitHub stores the website source and assets. Cloudflare serves the built website. Neither should be treated as a patient-record system merely because access is private or HTTPS is enabled. The current static design needs no Supabase project or scheduled keepalive.
+GitHub stores the website source and assets. GitHub Pages currently serves the public preview. Neither should be treated as a patient-record system merely because access is private or HTTPS is enabled. The current static design needs no Supabase project or scheduled keepalive.
 
 Before any future service creates, receives, stores, or transmits electronic protected health information on behalf of the practice, the practice needs to evaluate the architecture, applicable HIPAA duties, vendor agreements/BAAs, access controls, logging, retention, incident response, and relevant service eligibility. This build does not claim HIPAA certification or determine the practice's legal compliance.
 

@@ -3,7 +3,7 @@
 ## Platform
 web
 ## Stack
-Next.js + React + TypeScript + Tailwind CSS, as requested in Dr. Robert Project.docx. Static export for Cloudflare hosting.
+Next.js + React + TypeScript + Tailwind CSS, as requested in Dr. Robert Project.docx. Static export currently published through GitHub Pages, with environment-driven base paths for other hosts.
 ## Users
 Patients and families seeking hearing care and tinnitus support in Pagosa Springs, southwest Colorado, and northwest New Mexico.
 ## Product Purpose
