@@ -560,3 +560,24 @@ html { scroll-padding-top:94px; }
 
 .assessment .result-actions { margin-top:25px; gap:12px; }
 .assessment .result-actions .button { margin-top:0; }
+
+.service-disclosure-content .service-list-heading { margin-top:24px; font-size:15px; font-weight:650; letter-spacing:0; }
+.service-options { list-style:disc; padding-left:19px; margin:13px 0 0; color:var(--muted); font-size:15px; line-height:1.7; }
+.service-options li+li { margin-top:7px; }
+.service-options li::marker { color:var(--teal); }
+.service-visit-formats { margin:-20px 0 28px; color:var(--muted); font-size:14px; line-height:1.75; }
+.footer-qualifications { border-top:1px solid #3b535b; padding-block:21px 24px; }
+.footer-qualifications-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px 24px; margin-bottom:14px; }
+.footer-qualifications h2 { font-size:14px; font-weight:600; letter-spacing:0; color:white; }
+.footer-qualifications-heading a { display:inline-flex; gap:8px; align-items:center; min-height:28px; font-size:13px; text-decoration:underline; }
+.footer-qualification-list { display:grid; grid-template-columns:1.6fr 1fr; gap:18px 32px; margin:0; font-size:13px; line-height:1.75; }
+.footer-qualification-list dt { color:#fff; font-weight:600; font-size:14px; margin-bottom:4px; }
+.footer-qualification-list dd { margin:0; color:#c5d8d4; }
+@media(max-width:600px) {
+ .footer-qualification-list { grid-template-columns:1fr; gap:18px; }
+ .footer-qualifications { padding-block:18px 20px; }
+ .footer-qualifications-heading { margin-bottom:12px; }
+ .service-visit-formats { margin-top:-12px; }
+}
+.footer-bottom { flex-wrap:wrap; }
+.footer-bottom>div { flex-wrap:wrap; gap:8px 20px; }

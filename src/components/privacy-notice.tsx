@@ -46,7 +46,7 @@ export function PrivacyNotice() {
     <p>We may update this notice as our services or applicable requirements change. The updated date appears at the top. Material changes may also be communicated through the website or directly where appropriate.</p>
     <p>For privacy questions, requests, SMS support, or a copy of the clinical Notice of Privacy Practices, contact Hearing & Tinnitus Solutions at <a href={`mailto:${clinic.email}`}>{clinic.email}</a>, <a href={clinic.phoneHref}>{clinic.phone}</a>, or {clinic.address}, {clinic.city}.</p>
 
-    <h2>Website content and imagery</h2>
+    <h2 id="website-content-credits">Website content and imagery</h2>
     <p>Website information is educational and does not replace an individual medical evaluation. Clinic scenes are AI-generated illustrations; named provider portraits are adapted from the practice’s existing photographs. The service illustration of Dr. Melton is AI-generated using his portrait as a reference and does not depict a real patient visit. The tinnitus check-in is an original reflection tool and is not the validated Tinnitus Functional Index.</p>
   </article>;
 }

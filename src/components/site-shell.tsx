@@ -66,7 +66,14 @@ export function Footer() {
       <div><h2>Your visit</h2><Link href="/book/">Book an appointment</Link><Link href="/resources/">Patient resources</Link><Link href="/assessment/">Tinnitus check-in</Link><Link href="/contact/">Find our clinic</Link></div>
       <div><h2>Let’s talk</h2><a href={clinic.phoneHref}>{clinic.phone}</a><a href={`mailto:${clinic.email}`}>{clinic.email}</a><p>{clinic.address}<br />{clinic.city}</p></div>
     </div>
-    <div className="footer-bottom"><span>© {new Date().getFullYear()} Hearing & Tinnitus Solutions, P.C.</span><div><Link href="/privacy/">Privacy</Link><Link href="/accessibility/">Accessibility</Link><span>Made for a more connected life.</span></div></div>
+    <section className="footer-qualifications" aria-labelledby="footer-qualifications-title">
+      <div className="footer-qualifications-heading"><h2 id="footer-qualifications-title">Provider qualifications</h2><a href="https://htsaudiology.com/about/" target="_blank" rel="noopener noreferrer">Practice profile <ArrowUpRight size={14} aria-hidden="true" /></a></div>
+      <dl className="footer-qualification-list">
+        <div><dt>Robert Melton, AuD, CH-TM</dt><dd>Doctor of Audiology · Auburn University</dd><dd>Certificate Holder–Tinnitus Management · American Board of Audiology</dd><dd>TRT training · Lenire® & Oto certified provider</dd></div>
+        <div><dt>Jen Hurst, AuD</dt><dd>Doctor of Audiology · A.T. Still University</dd></div>
+      </dl>
+    </section>
+    <div className="footer-bottom"><span>© {new Date().getFullYear()} Hearing & Tinnitus Solutions, P.C.</span><div><Link href="/privacy/">Privacy</Link><Link href="/accessibility/">Accessibility</Link><Link href="/privacy/#website-content-credits">Image credits</Link><a href="https://diegocaputo.com" target="_blank" rel="noopener noreferrer">Website by diegocaputo.com</a></div></div>
   </div></footer>;
 }
 
