@@ -198,6 +198,7 @@ input,textarea { caret-color:var(--teal); accent-color:var(--teal); }
 .service-row p { font-size:14px; color:var(--muted); }
 .research-note { max-width:780px; padding:30px; background:var(--mist); font-size:13px; }
 .research-note a { text-decoration:underline; }
+.research-note a.text-link { text-decoration:none; }
 .page-cta { padding:50px; background:var(--mist); display:flex; justify-content:space-between; align-items:center; gap:30px; margin-bottom:90px; }
 .page-cta h2 { font-size:30px; }
 .page-cta p { margin-top:12px; color:var(--muted); font-size:14px; }
@@ -214,6 +215,9 @@ input,textarea { caret-color:var(--teal); accent-color:var(--teal); }
 .resource-grid h2 { font-size:32px; margin-bottom:30px; }
 .resource-item { padding:26px 0; border-top:1px solid var(--line); }
 .resource-item h3 { font-size:21px; margin-bottom:15px; }
+.resource-item .resource-heading { display:flex; align-items:flex-start; gap:12px; }
+.resource-heading svg { flex:none; margin-top:1px; color:var(--teal); }
+.resource-heading span { min-inline-size:0; }
 .resource-item p { font-size:14px; color:var(--muted); }
 .resource-item .text-link { margin-top:18px; }
 .legal-content { max-width:780px; margin:auto; padding:0 0 90px; }
@@ -331,6 +335,10 @@ button:disabled { cursor:not-allowed; }
 .map-directions { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 20px; font-size:14px; font-weight:600; background:#edf3ef; }
 
 .service-details-section { border-top:1px solid var(--line); }
+.services-section,.service-details-section,.visit-section { padding-top:84px; }
+@media (max-width:1000px) {
+  .services-section,.service-details-section,.visit-section { padding-top:64px; }
+}
 .service-disclosures { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:18px; align-items:start; }
 .service-disclosure { grid-column:span 2; border:1px solid var(--line); border-radius:3px; background:white; scroll-margin-top:110px; }
 .service-disclosure:nth-child(n+4) { grid-column:span 3; }
@@ -379,6 +387,7 @@ button:disabled { cursor:not-allowed; }
 }
 @media (max-width:600px) {
   .header-cta { font-size:13px; }
+  .services-section,.service-details-section,.visit-section { padding-top:48px; }
   .care-shortcuts>a>div { display:block; }
   .care-shortcuts h2 { font-size:21px; }
   .care-shortcuts p { font-size:14px; margin-top:5px; }
