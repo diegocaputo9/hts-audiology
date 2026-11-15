@@ -8,6 +8,7 @@ export function PrivacyNotice() {
     <h2>Information you choose to provide</h2>
     <p>If you call, text, or email the practice, we receive the information you choose to share, such as your contact details and inquiry. We use that information to respond, help arrange care, provide customer support, and communicate about our services. Please ask the clinic for a secure way to send medical records or sensitive health information.</p>
     <p>This website has no patient accounts, online payment collection, medical uploads, or appointment-submission form. It does not sell personal information or use advertising pixels or website analytics.</p>
+    <p>The contact message window prepares an email draft using the name, email address, and message you enter. These entries stay in the current page’s memory until you leave or refresh; the website does not store or submit them to a server. Choosing “Send message” passes the draft to your email app. You review and send it there, and your email provider’s privacy practices apply. Please use this feature only for general questions.</p>
 
     <h2>Technical and device information</h2>
     <p>The website’s hosting and security providers may process technical information needed to deliver, maintain, and protect the service. This can include IP address, browser and device characteristics, operating system, pages requested, timestamps, and diagnostic or security logs. Approximate location may be inferred from an IP address. This website does not request GPS access or your precise device location.</p>

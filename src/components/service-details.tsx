@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { Plus, ArrowUpRight } from 'lucide-react';
 import { useReducedMotion } from 'motion/react';
+import { ServiceSymbol } from './service-symbol';
 
 export const primaryServices = [
   {
@@ -97,7 +98,8 @@ function ServiceDisclosure({ service }: { service: Service }) {
   }}>
     <summary onClick={toggle} aria-expanded={expanded}>
       <Plus size={20} className="disclosure-plus" />
-      <span><strong>{service.title}</strong><span className="service-subtitle">{service.subtitle}</span></span>
+      <span className="service-disclosure-label"><strong>{service.title}</strong><span className="service-subtitle">{service.subtitle}</span></span>
+      <ServiceSymbol service={service.id} />
     </summary>
     <div ref={content} className="service-disclosure-content">
       {service.paragraphs.map(text => <p key={text}>{text}</p>)}

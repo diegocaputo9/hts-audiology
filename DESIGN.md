@@ -42,7 +42,7 @@ typography:
     lineHeight: 1.8
   annotation:
     fontFamily: "Manrope Variable, sans-serif"
-    fontSize: "12px"
+    fontSize: "13px"
     fontWeight: 400
     lineHeight: 1.7
   label:
@@ -149,8 +149,8 @@ The palette combines cool clinical whites with desaturated green-blue actions an
 - **Display:** Hero headline uses the display token; mobile overrides use a fluid smaller clamp. Interior page headings use their own responsive sizes.
 - **Headline / Title:** Global second- and third-level headings use their respective tokens. Individual provider and service compositions adjust those sizes in source.
 - **Body:** The body token establishes the base. Paragraphs are limited to (68ch).
-- **Copy:** Reading paragraphs use (16px) with (1.8) leading. Supporting labels use (12–15px). No interface text is below (12px), including at mobile breakpoints.
-- **Label:** Actions use semibold labels, navigation uses (14px), and FAQ summaries use (15px). Annotations use the (12px) minimum token.
+- **Copy:** Reading paragraphs use (16px) with (1.8) leading. Supporting labels use (13–15px). No interface text is below (13px), including at mobile breakpoints.
+- **Label:** Actions use semibold labels, navigation uses (14px), and FAQ summaries use (15px). Annotations use the (13px) minimum token.
 
 ## Layout
 
@@ -188,7 +188,7 @@ Reading surfaces remain restrained: the assessment and calendar are white, singl
 
 ### Inputs / Fields
 
-The implemented assessment uses native radio inputs inside numbered labels, not text-entry fields. Selected labels receive teal fill, white text, and a teal border. Labels with focused inputs receive a (2px) teal outline at (3px) offset. Their minimum height is (46px), rising to (48px) on mobile. No text-field or validation-error visual system is present to document.
+The implemented assessment uses native radio inputs inside numbered labels, not text-entry fields. Selected labels receive teal fill, white text, and a teal border. Labels with focused inputs receive a (2px) teal outline at (3px) offset. Their minimum height is (46px), rising to (48px) on mobile. Contact fields use 16px text, 48px minimum input height, visible labels, native required/email validation, and a high-contrast boundary. Invalid styling appears after interaction. The message area can be resized vertically.
 
 ### Navigation
 
@@ -204,7 +204,7 @@ The background slideshow crossfades between fixed photographs with no zoom or pa
 
 ### Service Disclosures
 
-Five named primary services use native details/summary semantics. The first three cards sit in a three-column row and the remaining two in a two-column row; the layout reduces to two columns at (1100px) and one at (600px). Summaries pair a plus icon with a (22–23px) title and (12–13px) subtitle. Descriptions use (16px) body copy. Independent cards open or close over (220ms) with measured height, preserve interruption, and toggle instantly for reduced motion or keyboard activation.
+Five named primary services use native details/summary semantics. The first three cards sit in a three-column row and the remaining two in a two-column row; the layout reduces to two columns at (1100px) and one at (600px). Summaries pair a plus icon with a (21–23px) title, (13px) subtitle, and a decorative teal line symbol on the right. Five authored SVGs share a 40-unit viewBox, thin rounded strokes, and 30–40px rendered sizes. Descriptions use (16px) body copy. Independent cards open or close over (220ms) with measured height, preserve interruption, and toggle instantly for reduced motion or keyboard activation.
 
 ### Liquid Sound Sculpture
 
@@ -230,3 +230,9 @@ Native disclosure rows use dividers, semibold question text, and a plus SVG that
 - **Don't** introduce pill navigation.
 - **Don't** turn the bounded header contraction into a general convention for animating layout dimensions.
 - **Don't** present illustrative scenes as real clinic staff or patient footage.
+
+### Current Framing and Contact Dialog
+
+The hero runs the full viewport width. The home shortcut divider sits 12–28px from the viewport edges; the provider section starts 32–60px below it. Interior breadcrumbs begin 20–28px below the header. Footer links use compact 30px rows. The contact intro has no border directly beneath its call button.
+
+The contact dialog uses native `showModal()`, a labeled heading, automatic focus containment/return, Escape dismissal, and a named close button. Its selective translucent surface uses 24px blur, a specular white edge, and a 260ms opacity/scale entrance, disabled for reduced motion. It is capped at 560px and constrained to the dynamic viewport with internal scrolling. Name, email address, and message prepare a draft in the visitor’s email app. Copy feedback is announced; no “sent” state, server submission, or persistent form storage exists.

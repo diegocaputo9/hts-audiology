@@ -142,7 +142,7 @@
       },
       "annotation": {
         "displayName": "Readable annotation",
-        "purpose": "12px minimum at every viewport; main reading copy is 16px."
+        "purpose": "13px minimum at every viewport; main reading copy is 16px."
       }
     },
     "shadows": [
@@ -180,7 +180,7 @@
       },
       {
         "name": "reveal",
-        "value": "duration:.65s; y:18px to 0; opacity:.55 to 1",
+        "value": "duration:.65s; opacity:.7 to 1",
         "purpose": "Once-per-view section entry; reduced-motion guarded."
       },
       {
@@ -266,7 +266,7 @@
       "refersTo": "navigation",
       "description": "White desktop navigation with teal line states.",
       "html": "<nav class=\"ds-nav\"><a href=\"#home\" aria-current=\"page\">Home</a><a href=\"#people\">Our people</a><a href=\"#care\">Our care</a></nav>",
-      "css": ".ds-nav{display:flex;gap:27px;background:white;color:var(--ink,#172e3b);font-size:13px;font-weight:600;font-family:'Manrope Variable',sans-serif;}.ds-nav a{position:relative;padding:12px 0;color:inherit;text-decoration:none;}.ds-nav a:after{content:\"\";position:absolute;bottom:5px;left:0;width:100%;height:1px;background:var(--teal,#315f5c);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease,cubic-bezier(.16,1,.3,1));}.ds-nav a:hover:after,.ds-nav a[aria-current]:after{transform:scaleX(1)}.ds-nav a:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;}@media(prefers-reduced-motion:reduce){.ds-nav a:after{transition:none}}"
+      "css": ".ds-nav{display:flex;gap:27px;background:white;color:var(--ink,#172e3b);font-size:13px;font-weight:600;font-family:'Manrope Variable',sans-serif;}.ds-nav a{position:relative;padding:13px 0;color:inherit;text-decoration:none;}.ds-nav a:after{content:\"\";position:absolute;bottom:5px;left:0;width:100%;height:1px;background:var(--teal,#315f5c);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease,cubic-bezier(.16,1,.3,1));}.ds-nav a:hover:after,.ds-nav a[aria-current]:after{transform:scaleX(1)}.ds-nav a:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;}@media(prefers-reduced-motion:reduce){.ds-nav a:after{transition:none}}"
     },
     {
       "name": "Service Tabs",
