@@ -1,3 +1,4 @@
+import { MotionHeading } from '@/components/motion-heading';
 import { T, LocalizedElement, LanguageSwitcher } from '@/components/language';
 import { publicAsset } from '@/lib/public-asset';
 
@@ -18,7 +19,7 @@ const pageTitles: Record<string, string> = { about:'Our people', hearing:'Hearin
 export function generateStaticParams() { return Object.keys(pageTitles).map(slug => ({ slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; return { title: pageTitles[slug] || 'Page not found' }; }
 
-function PageHeading({ title, description, crumb }: { title: string; description?: string; crumb: string }) { return <Reveal className="page-heading"><div className="breadcrumb"><Link href="/"><T>Home</T></Link><ChevronRight size={11} /><span><T>{crumb}</T></span></div><h1><T>{title}</T></h1>{description && <p><T>{description}</T></p>}</Reveal>; }
+function PageHeading({ title, description, crumb }: { title: string; description?: string; crumb: string }) { return <Reveal className="page-heading"><div className="breadcrumb"><Link href="/"><T>Home</T></Link><ChevronRight size={11} /><span><T>{crumb}</T></span></div><MotionHeading as="h1"><T>{title}</T></MotionHeading>{description && <p><T>{description}</T></p>}</Reveal>; }
 function PageCTA({ tinnitus = false }: { tinnitus?: boolean }) { return <div className="container"><div className="page-cta"><div><h2><T>{tinnitus ? 'Let’s make space for some quiet.' : 'Start with a conversation.'}</T></h2><p><T>Personal care begins with understanding you.</T></p></div><Link className="button" href="/book/"><T>Book your visit </T><ArrowUpRight size={17} /></Link></div></div>; }
 
 export default async function ContentPage({ params }: { params: Promise<{ slug: string }> }) {

@@ -1,4 +1,5 @@
 'use client';
+import { MotionHeading } from '@/components/motion-heading';
 import { T } from '@/components/language';
 
 import { useEffect, useRef, useState } from 'react';
@@ -153,7 +154,7 @@ function ServiceDisclosure({ service }: { service: Service }) {
 export function ServiceDetails({ hearingOnly = false }: { hearingOnly?: boolean }) {
   return <section className="service-details-section section-space" aria-labelledby="primary-services-heading">
     <div className="container">
-      <Reveal className="section-intro"><h2 id="primary-services-heading"><T>The care you need.</T><br /><T>Clearly explained.</T></h2><p><T>Hearing exams, hearing aids, ear cleaning, and more.</T><br /><T>Select a service to explore what’s involved.</T></p></Reveal>
+      <Reveal className="section-intro"><MotionHeading id="primary-services-heading"><T>The care you need.</T><br /><T>Clearly explained.</T></MotionHeading><p><T>Hearing exams, hearing aids, ear cleaning, and more.</T><br /><T>Select a service to explore what’s involved.</T></p></Reveal>
       <p className="service-visit-formats"><T>Clinic, home visits, and telecare are available. Ask the team which format suits your needs.</T></p>
       <Reveal className="service-disclosures">{primaryServices.filter(service => !hearingOnly || service.id !== 'tinnitus-treatment').map(service => <ServiceDisclosure key={service.id} service={service} />)}</Reveal>
     </div>

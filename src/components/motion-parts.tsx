@@ -3,16 +3,17 @@ import { T, LocalizedElement } from '@/components/language';
 
 import { publicAsset } from '@/lib/public-asset';
 
-import { motion, useReducedMotion } from 'motion/react';
+import { useReducedMotion } from 'motion/react';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowUpRight, Pause, Play, MapPin } from 'lucide-react';
 import { LocalizedLink as Link } from '@/components/language';
 import { clinic } from '@/lib/clinic';
-import { motionTiming, motionEase } from '@/lib/motion';
+import { MotionHeading } from './motion-heading';
 
-export function Reveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const reduce = useReducedMotion();
-  return <motion.div className={className} initial={false} whileInView={reduce ? { opacity: 1 } : { opacity: [.9, 1] }} viewport={{ once: true, amount: .15 }} transition={{ type: 'tween', duration: reduce ? 0 : motionTiming.reveal, delay: reduce ? 0 : delay, ease: motionEase }}><T>{children}</T></motion.div>;
+export function Reveal({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  // Protect the portrait story and patient contact/service controls from scroll fading.
+  const staticContent = /(?:^| )(?:provider-(?:portrait|copy)|visit-grid|service-disclosures)(?: |$)/.test(className);
+  return <div className={`${className}${staticContent ? '' : ' reveal-surface'}`}><T>{children}</T></div>;
 }
 
 export function Hero() {
@@ -30,7 +31,7 @@ export function Hero() {
     <LocalizedElement as="img" className="hero-poster" src={publicAsset("/images/consultation.jpg")} width="1672" height="941" fetchPriority="high" alt="Illustrative audiology consultation with an older adult in a bright clinic" />
     <video ref={video} className="hero-video" loop muted playsInline preload="metadata" poster={publicAsset("/images/consultation.jpg")} width="1920" height="1080" aria-hidden="true"><source src={publicAsset("/video/patient-journey.mp4")} type="video/mp4" /></video>
     <div className="hero-shade" />
-    <div className="hero-content"><h1 id="hero-heading"><T>Life sounds</T><br /><T>better connected.</T></h1><p><T>Expert hearing and tinnitus care.</T><br /><T>Centered on you, here in Pagosa Springs.</T></p><Link href="/book/" className="button button-light"><T>Let’s find your clarity </T><ArrowUpRight size={18} /></Link><a href="#meet-dr-melton" className="hero-secondary"><T>Get to know your care team </T><ArrowDown size={15} /></a></div>
+    <div className="hero-content"><MotionHeading as="h1" id="hero-heading"><T>Life sounds</T><br /><T>better connected.</T></MotionHeading><p><T>Expert hearing and tinnitus care.</T><br /><T>Centered on you, here in Pagosa Springs.</T></p><Link href="/book/" className="button button-light"><T>Let’s find your clarity </T><ArrowUpRight size={18} /></Link><a href="#meet-dr-melton" className="hero-secondary"><T>Get to know your care team </T><ArrowDown size={15} /></a></div>
     <div className="hero-bottom"><span><MapPin size={15} /> <T>Pagosa Springs, Colorado</T></span><div><LocalizedElement as="button" onClick={toggle} className="film-control" aria-label={playing ? 'Pause background slideshow' : 'Play background slideshow'}>{playing ? <Pause size={15} /> : <Play size={15} />}<span><T>{playing ? 'Pause slideshow' : 'Play slideshow'}</T></span></LocalizedElement></div></div>
   </section>;
 }
