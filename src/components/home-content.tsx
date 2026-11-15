@@ -35,8 +35,8 @@ export function Faqs({ all = false }: { all?: boolean }) {
   return <div className="faq-list">{faqs.slice(0, all ? 5 : 4).map(([q, a]) => <details name="clinic-faq" key={q}><summary>{q}<Plus size={19} /></summary><div><p>{a}</p></div></details>)}</div>;
 }
 
-export function VisitSection() {
-  return <section className="visit-section section-space" id="visit"><div className="container"><Reveal className="section-intro"><h2>Good care.<br />Close to home.</h2><p>Serving our neighbors in southwest Colorado<br />and northwest New Mexico.</p></Reveal>
+export function VisitSection({ isHome = false }: { isHome?: boolean }) {
+  return <section className={`visit-section section-space${isHome ? ' home-visit-section' : ''}`} id="visit"><div className="container"><Reveal className="section-intro"><h2>Good care.<br />Close to home.</h2><p>Serving our neighbors in southwest Colorado<br />and northwest New Mexico.</p></Reveal>
     <div className="visit-grid"><div className="visit-details"><h3>Come see us in Pagosa.</h3><p className="address"><MapPin size={18} /><span>{clinic.address}<br />{clinic.city}</span></p><a className="text-link" href={clinic.directions} target="_blank" rel="noopener noreferrer">Get directions <ArrowUpRight size={17} /></a><div className="hours"><div><span>Monday to Thursday</span><span>8:30 to 12 & 1 to 4:30</span></div><div><span>Friday</span><span>8:30 to 12</span></div><small>Mountain Time · Closed Saturday & Sunday</small></div><a className="visit-phone" href={clinic.phoneHref}><Phone size={18} />{clinic.phone}<ArrowUpRight size={19} /></a><span className="small-text">Call or text. We’re happy to help.</span><a className="visit-email" href={`mailto:${clinic.email}`}><Mail size={18} /><span>{clinic.email}</span><ArrowUpRight size={17} /></a></div><MapPanel /></div>
     <div className="home-faq"><div><h3>A little clarity<br />before your visit.</h3><Link href="/resources/" className="text-link">All patient resources <ArrowRight size={17} /></Link></div><Faqs /></div>
   </div></section>;

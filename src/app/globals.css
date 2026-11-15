@@ -606,3 +606,5 @@ html { scroll-padding-top:94px; }
 @media(max-width:600px) { .footer-top { grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 16px; } .footer-contact { grid-column:1 / -1; grid-row:3; display:block; min-width:0; padding-right:144px; } .footer-contact a { overflow-wrap:anywhere; } .footer-badges { grid-column:2; grid-row:3; justify-self:end; max-width:100%; padding:10px 8px; } .credential-badge-aba img { width:110px; max-width:100%; } .credential-badge { max-width:128px; } .footer-brand { font-size:27px; } }
 
 .is-returning-top main,.is-returning-top footer { overflow-anchor:none; }
+
+@media(max-width:600px) { .home-visit-section .home-faq { display:none; } }
