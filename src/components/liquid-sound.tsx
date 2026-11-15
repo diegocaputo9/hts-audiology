@@ -1,4 +1,5 @@
 'use client';
+import { T, LocalizedElement } from '@/components/language';
 
 import { useEffect, useRef, useState } from 'react';
 import { Pause, Play } from 'lucide-react';
@@ -104,6 +105,6 @@ export function LiquidSound() {
     }} onPointerLeave={() => { pointer.current = { x: -1000, y: 0 }; }}>
       <canvas ref={canvas} />
     </div>
-    <button className="sound-control" onClick={() => setPlaying(value => !value)} aria-label={playing ? 'Pause sound animation' : 'Play sound animation'}>{playing ? <Pause size={14} /> : <Play size={14} />}<span>{playing ? 'Pause animation' : 'Play animation'}</span></button>
+    <LocalizedElement as="button" className="sound-control" onClick={() => setPlaying(value => !value)} aria-label={playing ? 'Pause sound animation' : 'Play sound animation'}>{playing ? <Pause size={14} /> : <Play size={14} />}<span><T>{playing ? 'Pause animation' : 'Play animation'}</T></span></LocalizedElement>
   </div>;
 }

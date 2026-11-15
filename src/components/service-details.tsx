@@ -1,7 +1,8 @@
 'use client';
+import { T } from '@/components/language';
 
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import { LocalizedLink as Link } from '@/components/language';
 import { Plus, ArrowUpRight } from 'lucide-react';
 import { useReducedMotion } from 'motion/react';
 import { ServiceSymbol } from './service-symbol';
@@ -137,14 +138,14 @@ function ServiceDisclosure({ service }: { service: Service }) {
   }}>
     <summary onClick={toggle} aria-expanded={expanded}>
       <Plus size={20} className="disclosure-plus" />
-      <span className="service-disclosure-label"><strong>{service.title}</strong><span className="service-subtitle">{service.subtitle}</span></span>
+      <span className="service-disclosure-label"><strong><T>{service.title}</T></strong><span className="service-subtitle"><T>{service.subtitle}</T></span></span>
       <ServiceSymbol service={service.id} />
     </summary>
     <div ref={content} className="service-disclosure-content">
-      {service.paragraphs.map(text => <p key={text}>{text}</p>)}
-      <h3 className="service-list-heading">Care options</h3>
-      <ul className="service-options">{service.includes.map(item => <li key={item}>{item}</li>)}</ul>
-      <Link className="text-link" href="/book/">Ask about {service.title.toLowerCase()} <ArrowUpRight size={16} /></Link>
+      {service.paragraphs.map(text => <p key={text}><T>{text}</T></p>)}
+      <h3 className="service-list-heading"><T>Care options</T></h3>
+      <ul className="service-options">{service.includes.map(item => <li key={item}><T>{item}</T></li>)}</ul>
+      <Link className="text-link" href="/book/"><T>Ask about {service.title.toLowerCase()}</T> <ArrowUpRight size={16} /></Link>
     </div>
   </details>;
 }
@@ -152,8 +153,8 @@ function ServiceDisclosure({ service }: { service: Service }) {
 export function ServiceDetails({ hearingOnly = false }: { hearingOnly?: boolean }) {
   return <section className="service-details-section section-space" aria-labelledby="primary-services-heading">
     <div className="container">
-      <Reveal className="section-intro"><h2 id="primary-services-heading">The care you need.<br />Clearly explained.</h2><p>Hearing exams, hearing aids, ear cleaning, and more.<br />Select a service to explore what’s involved.</p></Reveal>
-      <p className="service-visit-formats">Clinic, home visits, and telecare are available. Ask the team which format suits your needs.</p>
+      <Reveal className="section-intro"><h2 id="primary-services-heading"><T>The care you need.</T><br /><T>Clearly explained.</T></h2><p><T>Hearing exams, hearing aids, ear cleaning, and more.</T><br /><T>Select a service to explore what’s involved.</T></p></Reveal>
+      <p className="service-visit-formats"><T>Clinic, home visits, and telecare are available. Ask the team which format suits your needs.</T></p>
       <Reveal className="service-disclosures">{primaryServices.filter(service => !hearingOnly || service.id !== 'tinnitus-treatment').map(service => <ServiceDisclosure key={service.id} service={service} />)}</Reveal>
     </div>
   </section>;

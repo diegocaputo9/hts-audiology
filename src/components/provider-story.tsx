@@ -69,6 +69,7 @@ export function ProviderStory({ children }: { children: ReactNode }) {
     }
     const resize = new ResizeObserver(measure);
     resize.observe(portrait);
+    resize.observe(bio);
     const header = document.querySelector('.site-header');
     if (header) resize.observe(header);
     photo.addEventListener('load', measure);

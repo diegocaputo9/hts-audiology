@@ -22,3 +22,5 @@ Clear routes to care. Patient privacy by default. Honest clinical evidence. Acce
 Motion rhythm: 0.16s presses, 0.7s subtle content reveals, and 1.2s scene transitions. Content remains readable during reveals; images do not drift. Reduced motion preserves final visible states.
 
 On phones, the tinnitus check in uses a native 0 to 10 slider with every level marked; desktop keeps discrete radio ratings. No answer is inferred from the slider’s initial position. Both controls share answer, feedback and score state, with no saved or transmitted responses. The phone provider bio includes one additional paragraph and the existing external screening link.
+
+Bilingual interface: English by default, with a complete Spanish option and a confirmed “También hablamos español” notice. Clinical content and translations require the practice's final review. Social and Google review links appear in the footer and contact page. The displayed Google rating is a dated, owner-supplied snapshot rather than a live feed. The hero slideshow continues during page scrolling and retains manual pause/play. Shared-link previews use Dr. Melton’s original portrait on a light background.

@@ -9,6 +9,10 @@ export const clinic = {
   city: 'Pagosa Springs, CO 81147',
   directions: 'https://www.google.com/maps/dir/?api=1&destination=2343A+Eagle+Drive+Pagosa+Springs+CO+81147',
   screening: 'https://www.shoeboxonline.com/hursthearing/',
+  socials: { facebook: 'https://www.facebook.com/htsaudiology/', instagram: 'https://www.instagram.com/hts_audiology/' },
+  googleBusiness: 'https://share.google/HoPhoRzbIrXpUcseP',
+  // Owner-supplied Google screenshot. This is a dated snapshot, not a live API feed.
+  googleReviewSnapshot: { rating: '5.0', count: 237, asOf: 'Nov 2026' },
 };
 
 export const services = {

@@ -1,3 +1,4 @@
+import { T } from '@/components/language';
 type ServiceId = 'hearing-exams' | 'hearing-aids' | 'ear-cleaning' | 'tinnitus-treatment' | 'hearing-protection';
 
 /** A small, consistent set of line drawings; the adjacent service name supplies the label. */

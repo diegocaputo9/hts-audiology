@@ -200,7 +200,7 @@ Text tabs sit over a hairline with a shared (3px) teal selection underline. Keyb
 
 ### Still-image Slideshow and Reveals
 
-The background slideshow crossfades between fixed photographs with no zoom or pan. An explicit play/pause control remains; the hero’s provenance badge was removed at the user’s request, with provenance kept in the privacy notice. Reduced motion and data-saving preferences suppress autoplay; leaving the viewport pauses playback. Reveals use opacity only (.9 to 1), duration (.7s), and the shared ease; images have no scroll drift.
+The background slideshow crossfades between fixed photographs with no zoom or pan. An explicit play/pause control remains; the hero’s provenance badge was removed at the user’s request, with provenance kept in the privacy notice. Reduced motion and data-saving preferences suppress autoplay; scrolling away no longer pauses playback, while the visible pause control remains available. Reveals use opacity only (.9 to 1), duration (.7s), and the shared ease; images have no scroll drift.
 
 ### Service Disclosures
 
@@ -260,3 +260,11 @@ At phone widths (600px and below), the tinnitus reflection uses a native range i
 The phone homepage bio adds one paragraph about advanced audiology, personalized care, clinic/telecare/home visits, tinnitus care and professional cleaning, with an inline link to the existing complimentary screening provider. The heading and subtitle are unchanged, and the paragraph is hidden on desktop. The supplied FDA wording and hashtags are not added.
 
 The hero poster has a concise visual description for assistive technology. Reflection results place the booking and print/save controls directly after the chart, with a brief handoff explanation; buttons wrap at phone widths and remain hidden in print. The clinical questionnaire identity, browser-only answer handling and preferred-day booking semantics remain explicit.
+
+The footer and contact page include locally rendered Facebook and Instagram icon links with accessible names, 44px targets and the shared 160ms press rhythm. A Google review link displays the owner-provided 5.0/237 snapshot, dated Nov 2026, and opens the supplied exact Google share URL. It does not claim live synchronization or embed a review widget. The footer utility row keeps social controls and the rating compact at narrow widths.
+
+English remains the initial language. First-party Spanish translations cover all patient pages, privacy and accessibility text, forms, services, questionnaire questions, per-answer feedback, result explanations, calendar labels and accessible names. T renders text without adding DOM wrappers, preserving the established CSS layout; LocalizedElement translates human-facing attributes, and LocalizedLink retains Next navigation. Language controls appear in navigation, the provider introduction, contact page and footer. Language choice stays in the current app session, and changing it does not reset answers or form inputs. Document language and page title update with the selection. Locale changes do not call a translation service or save patient information. Clinical Spanish remains part of the practice's content review before launch.
+
+The English hero type scale is pinned to the earlier values: desktop clamp(2.8rem, 5.3vw, 5.5rem), 60px at tablet widths, and clamp(2.7rem, 10vw, 3.8rem) on phones. Spanish adjusts only its own narrow-screen composition to accommodate longer copy. The hero slideshow no longer has a viewport observer that pauses it on scroll; manual pause, reduced motion and data-saving preferences remain available.
+
+The social preview uses a 1200×630 PNG composed from the existing Robert Melton cutout on a light background, without altering his identity. The face is positioned inside a central crop-safe area. Open Graph and Twitter metadata use the clinic name and the existing personal hearing/tinnitus care description. The image uses a new versioned path for share previews, and scripts/render-share-preview.cjs preserves the rendering source.
