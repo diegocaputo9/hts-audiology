@@ -19,5 +19,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" style={{ '--press-duration': `${motionTiming.press * 1000}ms`, '--reveal-duration': `${motionTiming.reveal * 1000}ms`, '--scene-duration': `${motionTiming.scene * 1000}ms` } as CSSProperties}><body><LanguageProvider><SiteMotion><a href="#main" className="skip-link"><T>Skip to content</T></a><Header /><main id="main">{children}</main><Footer /></SiteMotion></LanguageProvider></body></html>;
+  return <html lang="en" style={{ '--press-duration': `${motionTiming.press * 1000}ms`, '--reveal-duration': `${motionTiming.reveal * 1000}ms`, '--scene-duration': `${motionTiming.scene * 1000}ms` } as CSSProperties}><body><noscript><style>{`.motion-heading-ink,.heading-follow,.provider-copy.heading-sequence>:not(.motion-heading){animation:none!important;opacity:1!important;transform:none!important;clip-path:none!important}`}</style></noscript><LanguageProvider><SiteMotion><a href="#main" className="skip-link"><T>Skip to content</T></a><Header /><main id="main">{children}</main><Footer /></SiteMotion></LanguageProvider></body></html>;
 }

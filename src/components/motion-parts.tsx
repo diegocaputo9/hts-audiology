@@ -9,10 +9,10 @@ import { ArrowDown, ArrowUpRight, Pause, Play, MapPin } from 'lucide-react';
 import { LocalizedLink as Link } from '@/components/language';
 import { clinic } from '@/lib/clinic';
 
-export function Reveal({ children, className = '', still = false }: { children: React.ReactNode; className?: string; still?: boolean }) {
+export function Reveal({ children, className = '', still = false, sequence = false }: { children: React.ReactNode; className?: string; still?: boolean; sequence?: boolean }) {
   // Protect the portrait story and patient contact/service controls from scroll fading.
   const staticContent = /(?:^| )(?:provider-(?:portrait|copy)|visit-grid|service-disclosures)(?: |$)/.test(className);
-  return <div className={`${className}${still || staticContent ? '' : ' reveal-surface'}`}><T>{children}</T></div>;
+  return <div data-sequence-state={sequence ? 'pending' : undefined} className={`${className}${sequence ? ' heading-sequence' : ''}${still || staticContent ? '' : ' reveal-surface'}`}><T>{children}</T></div>;
 }
 
 export function Hero() {

@@ -97,7 +97,7 @@ export function LiquidSound() {
     return () => { cancelAnimationFrame(frame); resize.disconnect(); visibility.disconnect(); document.removeEventListener('visibilitychange', sync); };
   }, [playing]);
 
-  return <div className="sound-sculpture">
+  return <div className="sound-sculpture heading-follow">
     <div ref={wrapper} className="liquid-sound" aria-hidden="true" onPointerMove={event => {
       if (event.pointerType !== 'mouse' || !playing) return;
       const bounds = event.currentTarget.getBoundingClientRect();

@@ -750,14 +750,25 @@ html[lang=es] .desktop-nav { gap:12px; }
   .motion-heading[data-pause-last=true][data-title-state=play] .motion-heading-line:last-child .motion-heading-ink {
     animation-delay:calc((var(--line-index) - 1) * var(--title-stagger) + var(--title-duration) + var(--press-duration));
   }
-  .provider-copy:has(> .motion-heading[data-title-state=wait]) > :not(.motion-heading) { opacity:0; transform:translateY(8px); }
-  .provider-copy:has(> .motion-heading[data-title-state=play]) > :not(.motion-heading) {
-    animation:provider-copy-arrive var(--reveal-duration) var(--ease) both;
-    animation-delay:calc(var(--scene-duration) * .85);
-  }
-  .provider-copy:focus-within > :not(.motion-heading) { animation:none !important; opacity:1 !important; transform:none !important; }
+
 }
-@keyframes provider-copy-arrive { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+/* Supporting content follows its own heading, then stays visible on return visits. */
+@media(prefers-reduced-motion:no-preference) {
+  .heading-sequence[data-sequence-state=pending] .heading-follow,
+  .provider-copy.heading-sequence[data-sequence-state=pending] > :not(.motion-heading) { opacity:0; }
+  .heading-sequence[data-sequence-state=playing] .heading-follow,
+  .provider-copy.heading-sequence[data-sequence-state=playing] > :not(.motion-heading) {
+    animation:heading-support-in var(--reveal-duration) var(--ease) both;
+    animation-delay:var(--support-delay,0ms);
+  }
+  .provider-copy.heading-sequence { --support-offset:8px; }
+  .heading-sequence:focus-within .heading-follow,
+  .provider-copy.heading-sequence:focus-within > :not(.motion-heading) { animation:none !important; opacity:1 !important; transform:none !important; }
+}
+@keyframes heading-support-in {
+  from { opacity:0; transform:translateY(var(--support-offset,0px)); }
+  to { opacity:1; transform:translateY(0); }
+}
 @media print {
-  .provider-copy > :not(.motion-heading) { animation:none !important; opacity:1 !important; transform:none !important; }
+  .heading-follow,.provider-copy.heading-sequence > :not(.motion-heading) { animation:none !important; opacity:1 !important; transform:none !important; }
 }
