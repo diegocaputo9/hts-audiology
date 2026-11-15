@@ -92,8 +92,7 @@ export function SiteMotion({ children }: { children: React.ReactNode }) {
     clearTimeout(anchorTimer.current);
     document.documentElement.classList.add('is-returning-top');
     anchorTimer.current = window.setTimeout(() => {
-      const headerHeight = document.querySelector('.site-header')?.getBoundingClientRect().height || 0;
-      if (!location.hash && scrollY < headerHeight) window.scrollTo({ top: 0, behavior: 'instant' });
+      if (!location.hash) window.scrollTo({ top: 0, behavior: 'instant' });
       document.documentElement.classList.remove('is-returning-top');
     }, 1000);
   }, []);
