@@ -19,7 +19,7 @@ export const suggestions = [
   'Note when you notice tinnitus most and whether your hearing has changed. A hearing evaluation can help guide a conversation about your options.',
   'Write down the listening or concentration tasks that are hardest. Ask about strategies for listening effort and whether gentle background sound may help.',
   'Keep a note of how tinnitus affects falling asleep or staying asleep. Ask about comfortable background sound and a sleep routine that suits you.',
-  'Note what helps you feel at ease. Ask about relaxation approaches, sound enrichment, or counseling-based support for tinnitus.',
+  'Note what helps you feel at ease. Ask about relaxation approaches, sound enrichment, or counseling based support for tinnitus.',
   'Choose an activity or conversation you would like to enjoy more easily. Share that goal so your care can focus on what matters to you.',
 ];
 

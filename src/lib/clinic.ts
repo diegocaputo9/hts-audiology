@@ -2,7 +2,7 @@ import { publicAsset } from './public-asset';
 
 export const clinic = {
   name: 'Hearing & Tinnitus Solutions',
-  phone: '(970) 444-2314',
+  phone: '(970) 444 2314',
   phoneHref: 'tel:+19704442314',
   email: 'howdy@htsaudiology.com',
   address: '2343A Eagle Drive',
@@ -14,11 +14,11 @@ export const clinic = {
 export const services = {
   hearing: {
     title: 'Hearing', headline: 'More of the sounds.\nMore of your life.',
-    intro: 'From the first conversation to a finely tuned hearing aid, your care starts with understanding how you hear—and what you want to hear better.',
-    image: publicAsset('/images/consultation.jpg'), imageAlt: 'Illustrative hearing-care consultation with an older patient',
+    intro: 'From the first conversation to a finely tuned hearing aid, your care starts with understanding how you hear and what you want to hear better.',
+    image: publicAsset('/images/consultation.jpg'), imageAlt: 'Illustrative hearing care consultation with an older patient',
     items: [
       ['A clearer picture of your hearing', 'A comprehensive evaluation looks beyond a basic hearing check. Tone and speech testing, along with measures of ear health, help Dr. Melton understand your hearing and explain the next steps.'],
-      ['Hearing aids that fit your everyday', 'The right technology is personal. Hearing aids are selected and programmed around your hearing, comfort, listening environments, and goals—with ongoing adjustments and support.'],
+      ['Hearing aids that fit your everyday', 'The right technology is personal. Hearing aids are selected and programmed around your hearing, comfort, listening environments, and goals, with ongoing adjustments and support.'],
       ['Care for the details', 'Professional ear cleaning, device cleanings and repairs, and custom hearing protection help you care for your ears and keep your hearing technology performing well.'],
     ],
   },
@@ -29,7 +29,7 @@ export const services = {
     items: [
       ['Start with understanding', 'A tinnitus consultation explores the sounds you notice, your hearing, and how daily life is affected. Your experience helps guide an individual management plan.'],
       ['Explore your options', 'Depending on your needs, care may include sound therapy, hearing technology, counseling approaches, Lenire® bimodal neuromodulation, or the Oto tinnitus program. Suitability is determined in consultation.'],
-      ['Specialized care, close to home', 'Dr. Melton holds the Certificate Holder–Tinnitus Management credential and has training in Tinnitus Retraining Therapy. He is a certified provider of Lenire and Oto.'],
+      ['Specialized care, close to home', 'Dr. Melton holds the Certificate Holder in Tinnitus Management credential and has training in Tinnitus Retraining Therapy. He is a certified provider of Lenire and Oto.'],
     ],
   },
   cognition: {

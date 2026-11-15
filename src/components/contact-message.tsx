@@ -24,7 +24,7 @@ export function ContactMessage() {
     const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
     setDraft(body);
     setCopyStatus('');
-    window.location.href = `mailto:${clinic.email}?subject=${encodeURIComponent('Website inquiry — Hearing & Tinnitus Solutions')}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${clinic.email}?subject=${encodeURIComponent('Website inquiry: Hearing & Tinnitus Solutions')}&body=${encodeURIComponent(body)}`;
   }
 
   async function copyDraft() {

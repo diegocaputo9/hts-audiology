@@ -27,8 +27,14 @@ export function ProviderStory({ children }: { children: ReactNode }) {
       const header = headerHeight();
       const band = parseFloat(root!.style.getPropertyValue('--face-band'));
       const crop = parseFloat(root!.style.getPropertyValue('--portrait-head-crop'));
+      // Release as the final bio content enters the viewport, without a spacer.
+      const release = Math.max(0, innerHeight - rect.bottom);
+      const stickyTop = header - crop;
+      const constrainedTop = Math.min(stickyTop, rect.bottom - portrait.offsetHeight);
+      portrait.style.transform = `translateY(${Math.min(0, stickyTop - release - constrainedTop)}px)`;
       const bioRect = bio.getBoundingClientRect();
-      const clipped = Math.max(0, Math.min(bioRect.height, header + band - bioRect.top));
+      const faceBottom = Math.min(header + band, portrait.getBoundingClientRect().top + crop + band);
+      const clipped = Math.max(0, Math.min(bioRect.height, Math.max(header, faceBottom) - bioRect.top));
       bio.style.clipPath = `inset(${clipped}px 0 0)`;
       if (!nativeTimeline) {
         const progress = Math.max(0, Math.min(1, (header + 140 - rect.top - crop) / 140));
@@ -40,24 +46,25 @@ export function ProviderStory({ children }: { children: ReactNode }) {
       enabled = mobile.matches && !reduced.matches;
       root!.dataset.mobileStory = String(enabled);
       if (!enabled) {
+        portrait.style.transform = '';
         bio.style.clipPath = '';
         backdrop.style.clipPath = '';
         return;
       }
-      const height = portrait.clientHeight;
       const drawn = Math.min(photo.clientHeight, photo.clientWidth * (photo.naturalHeight || 1200) / (photo.naturalWidth || 900));
       const crop = photo.clientHeight - drawn + drawn / 6;
       const band = Math.min(180, Math.max(145, drawn * .36 + 12));
       root!.style.setProperty('--portrait-head-crop', `${crop}px`);
       root!.style.setProperty('--face-band', `${band}px`);
-      root!.style.setProperty('--bio-overlap', `${Math.min(160, Math.max(0, height - crop - band - 24))}px`);
-      root!.style.setProperty('--portrait-tail', `${Math.max(100, height - crop - band + 120)}px`);
       schedule();
     }
     function focusBio(event: FocusEvent) {
       if (!enabled || !(event.target instanceof HTMLElement)) return;
       const top = event.target.getBoundingClientRect().top;
-      const visibleTop = headerHeight() + parseFloat(root!.style.getPropertyValue('--face-band')) + 12;
+      const header = headerHeight();
+      const band = parseFloat(root!.style.getPropertyValue('--face-band'));
+      const crop = parseFloat(root!.style.getPropertyValue('--portrait-head-crop'));
+      const visibleTop = Math.max(header, Math.min(header + band, portrait.getBoundingClientRect().top + crop + band)) + 12;
       if (top < visibleTop) window.scrollBy({ top: top - visibleTop, behavior: 'instant' });
     }
     const resize = new ResizeObserver(measure);
@@ -83,5 +90,5 @@ export function ProviderStory({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  return <div ref={story} className="container provider-grid provider-story"><div className="provider-scroll-range" aria-hidden="true" />{children}<div className="provider-story-tail" aria-hidden="true" /></div>;
+  return <div ref={story} className="container provider-grid provider-story"><div className="provider-scroll-range" aria-hidden="true" />{children}</div>;
 }
