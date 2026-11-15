@@ -1,3 +1,5 @@
+import { publicAsset } from './public-asset';
+
 export const clinic = {
   name: 'Hearing & Tinnitus Solutions',
   phone: '(970) 444-2314',
@@ -13,7 +15,7 @@ export const services = {
   hearing: {
     title: 'Hearing', headline: 'More of the sounds.\nMore of your life.',
     intro: 'From the first conversation to a finely tuned hearing aid, your care starts with understanding how you hear—and what you want to hear better.',
-    image: '/images/consultation.jpg', imageAlt: 'Illustrative hearing-care consultation with an older patient',
+    image: publicAsset('/images/consultation.jpg'), imageAlt: 'Illustrative hearing-care consultation with an older patient',
     items: [
       ['A clearer picture of your hearing', 'A comprehensive evaluation looks beyond a basic hearing check. Tone and speech testing, along with measures of ear health, help Dr. Melton understand your hearing and explain the next steps.'],
       ['Hearing aids that fit your everyday', 'The right technology is personal. Hearing aids are selected and programmed around your hearing, comfort, listening environments, and goals—with ongoing adjustments and support.'],
@@ -23,7 +25,7 @@ export const services = {
   tinnitus: {
     title: 'Tinnitus', headline: 'Less distraction.\nMore room for you.',
     intro: 'Ringing, buzzing, or hissing can take up more space than you want it to. Start with someone who understands tinnitus and can help you explore a way forward.',
-    image: '/images/reception.jpg', imageAlt: 'Illustrative clinic team member helping arrange a consultation',
+    image: publicAsset('/images/reception.jpg'), imageAlt: 'Illustrative clinic team member helping arrange a consultation',
     items: [
       ['Start with understanding', 'A tinnitus consultation explores the sounds you notice, your hearing, and how daily life is affected. Your experience helps guide an individual management plan.'],
       ['Explore your options', 'Depending on your needs, care may include sound therapy, hearing technology, counseling approaches, Lenire® bimodal neuromodulation, or the Oto tinnitus program. Suitability is determined in consultation.'],
@@ -33,7 +35,7 @@ export const services = {
   cognition: {
     title: 'Cognition', headline: 'Hearing is part of\nthe bigger picture.',
     intro: 'Listening connects sound, attention, and conversation. Understanding your hearing is a practical place to start when you want to stay engaged with the people and moments around you.',
-    image: '/images/connection.jpg', imageAlt: 'Illustrative older couple enjoying a conversation at home',
+    image: publicAsset('/images/connection.jpg'), imageAlt: 'Illustrative older couple enjoying a conversation at home',
     items: [
       ['When listening takes more effort', 'Conversations can feel more demanding when speech is difficult to hear. A hearing evaluation helps identify hearing difficulties and opens a conversation about support.'],
       ['What research can tell us', 'In the ACHIEVE trial, hearing intervention did not reduce cognitive decline across the full study population. A group with higher baseline risk experienced slower decline. These results do not show that hearing aids prevent dementia.'],

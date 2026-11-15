@@ -1,5 +1,7 @@
 'use client';
 
+import { publicAsset } from '@/lib/public-asset';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
@@ -33,7 +35,7 @@ export function Header() {
     <div id="header-sentinel" aria-hidden="true" />
     <header className={`site-header ${scrolled ? 'is-compact' : ''}`}>
       <div className="header-inner">
-        <Link href="/" className="brand" aria-label="Hearing and Tinnitus Solutions home"><img src="/images/original-logo.png" width="2560" height="820" alt="Hearing & Tinnitus Solutions" /></Link>
+        <Link href="/" className="brand" aria-label="Hearing and Tinnitus Solutions home"><img src={publicAsset("/images/original-logo.png")} width="2560" height="820" alt="Hearing & Tinnitus Solutions" /></Link>
         <nav className="desktop-nav" aria-label="Main navigation">
           <Link className={`nav-link ${path === '/' ? 'active' : ''}`} href="/" aria-current={path === '/' ? 'page' : undefined}>Home</Link>
           <Link className={`nav-link ${path === '/about/' ? 'active' : ''}`} href="/about/" aria-current={path === '/about/' ? 'page' : undefined}>Our people</Link>
