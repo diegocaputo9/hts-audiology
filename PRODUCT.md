@@ -1,0 +1,20 @@
+# Hearing & Tinnitus Solutions
+<!-- impeccable:product-schema 1 -->
+## Platform
+web
+## Stack
+Next.js + React + TypeScript + Tailwind CSS, as requested in Dr. Robert Project.docx. Static export for Cloudflare hosting.
+## Users
+Patients and families seeking hearing care and tinnitus support in Pagosa Springs, southwest Colorado, and northwest New Mexico.
+## Product Purpose
+Explain the practice, help visitors understand care options, meet the providers, and contact the clinic or book an appointment.
+## Positioning
+Independent audiology practice led by Robert Melton, AuD, CH-TM, with tinnitus-specific training and personalized hearing care.
+## Capabilities and Constraints
+Dedicated about, hearing, tinnitus, cognition, patient resources, contact, booking, and tinnitus assessment routes. No patient data storage or analytics. Existing booking integration must be verified; unavailable scheduling must not imply live availability. Draft assessment must not be misrepresented as the validated TFI. Public health claims require sources. Private GitHub repository confirmed by user.
+## Brand Commitments
+Clinical, modern, sleek, high whitespace, white navigation, understated teal/navy. Fluid cinematic animations, morphing and subtle parallax. No pill navigation. Genuine provider credentials and portraits from current site; generated clinical scenes must remain illustrative. User chose building directly from the detailed brief and reviewing the working website.
+## Evidence on Hand
+../Dr. Robert Project.docx; https://htsaudiology.com/ and its about/services pages. No real staff footage or scheduling-provider access supplied. Do not invent staff identities, patient testimonials, availability, or medical outcomes.
+## Product Principles
+Clear routes to care. Patient privacy by default. Honest clinical evidence. Accessible motion and readable content.

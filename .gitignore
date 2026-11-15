@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+*.tsbuildinfo
+.DS_Store
+.openai/*.tar.gz
+.openai/*.tgz
+.impeccable/cache/
+playwright-report/
+test-results/
+.impeccable/review/

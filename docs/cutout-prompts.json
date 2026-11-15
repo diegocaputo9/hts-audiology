@@ -1,0 +1,14 @@
+{
+  "assets": [
+    {
+      "path": "docs/reference-assets/robert-melton-cutout.png",
+      "source": "docs/reference-assets/robert-melton.png",
+      "prompt": "Use case: background-extraction. Edit target: the attached actual photograph of Dr. Robert Melton. Remove ONLY the dark photographic backdrop to produce a clean transparent-background cutout of the exact same man. Preserve his exact identity, facial features, proportions, smile, gaze, skin texture, beard, clothing, patterned shirt, white coat, pose, and original crop. Do not beautify, redraw, recolor, relight, replace any features, or invent body parts. Keep white coat fully opaque, natural fine edge detail around head and shoulders. Output actual alpha transparency around the person. This is a precise background removal, not a new portrait."
+    },
+    {
+      "path": "docs/reference-assets/jen-hurst-cutout.png",
+      "source": "docs/reference-assets/jen-hurst.png",
+      "prompt": "Use case: background-extraction. Edit target: the actual attached photograph of Dr. Jen Hurst. Remove ONLY the gray-brown photographic backdrop to produce a clean transparent-background cutout of the exact same woman. Preserve her exact identity, facial features, proportions, expression, gaze, hair, skin texture, earrings, clothing, patterned blouse, white coat including embroidered name text, crossed-arm pose, and original crop. Do not beautify, redraw, recolor, relight, replace any features, or invent body parts. Keep white coat fully opaque and retain fine edge detail around hair and shoulders. Output actual alpha transparency around the person. Precise background removal only, not a new portrait."
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-15T03:24:47.203114+00:00",
+  "title": "Design System: Hearing & Tinnitus Solutions",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep Blue Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0376 234.90)",
+          "oklch(26% 0.0376 234.90)",
+          "oklch(38% 0.0376 234.90)",
+          "oklch(49% 0.0376 234.90)",
+          "oklch(61% 0.0376 234.90)",
+          "oklch(72% 0.0376 234.90)",
+          "oklch(84% 0.0376 234.90)",
+          "oklch(95% 0.0376 234.90)"
+        ]
+      },
+      "teal": {
+        "role": "primary",
+        "displayName": "Desaturated Teal",
+        "tonalRamp": [
+          "oklch(15% 0.0509 190.02)",
+          "oklch(26% 0.0509 190.02)",
+          "oklch(38% 0.0509 190.02)",
+          "oklch(49% 0.0509 190.02)",
+          "oklch(61% 0.0509 190.02)",
+          "oklch(72% 0.0509 190.02)",
+          "oklch(84% 0.0509 190.02)",
+          "oklch(95% 0.0509 190.02)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Blue Gray",
+        "tonalRamp": [
+          "oklch(15% 0.0236 219.98)",
+          "oklch(26% 0.0236 219.98)",
+          "oklch(38% 0.0236 219.98)",
+          "oklch(49% 0.0236 219.98)",
+          "oklch(61% 0.0236 219.98)",
+          "oklch(72% 0.0236 219.98)",
+          "oklch(84% 0.0236 219.98)",
+          "oklch(95% 0.0236 219.98)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Cool Hairline",
+        "tonalRamp": [
+          "oklch(15% 0.0075 197.02)",
+          "oklch(26% 0.0075 197.02)",
+          "oklch(38% 0.0075 197.02)",
+          "oklch(49% 0.0075 197.02)",
+          "oklch(61% 0.0075 197.02)",
+          "oklch(72% 0.0075 197.02)",
+          "oklch(84% 0.0075 197.02)",
+          "oklch(95% 0.0075 197.02)"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Green Mist",
+        "tonalRamp": [
+          "oklch(15% 0.0044 179.73)",
+          "oklch(26% 0.0044 179.73)",
+          "oklch(38% 0.0044 179.73)",
+          "oklch(49% 0.0044 179.73)",
+          "oklch(61% 0.0044 179.73)",
+          "oklch(72% 0.0044 179.73)",
+          "oklch(84% 0.0044 179.73)",
+          "oklch(95% 0.0044 179.73)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Clinical White",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(38% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(84% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "teal-hover": {
+        "role": "primary",
+        "displayName": "Deep Teal Hover",
+        "tonalRamp": [
+          "oklch(15% 0.0471 191.29)",
+          "oklch(26% 0.0471 191.29)",
+          "oklch(38% 0.0471 191.29)",
+          "oklch(49% 0.0471 191.29)",
+          "oklch(61% 0.0471 191.29)",
+          "oklch(72% 0.0471 191.29)",
+          "oklch(84% 0.0471 191.29)",
+          "oklch(95% 0.0471 191.29)"
+        ]
+      },
+      "outline": {
+        "role": "neutral",
+        "displayName": "Soft Outline",
+        "tonalRamp": [
+          "oklch(15% 0.0179 183.43)",
+          "oklch(26% 0.0179 183.43)",
+          "oklch(38% 0.0179 183.43)",
+          "oklch(49% 0.0179 183.43)",
+          "oklch(61% 0.0179 183.43)",
+          "oklch(72% 0.0179 183.43)",
+          "oklch(84% 0.0179 183.43)",
+          "oklch(95% 0.0179 183.43)"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus Teal",
+        "tonalRamp": [
+          "oklch(15% 0.0577 186.37)",
+          "oklch(26% 0.0577 186.37)",
+          "oklch(38% 0.0577 186.37)",
+          "oklch(49% 0.0577 186.37)",
+          "oklch(61% 0.0577 186.37)",
+          "oklch(72% 0.0577 186.37)",
+          "oklch(84% 0.0577 186.37)",
+          "oklch(95% 0.0577 186.37)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Hero display",
+        "purpose": "Film headline; smaller mobile override."
+      },
+      "copy": {
+        "displayName": "Supporting copy",
+        "purpose": "Common clinical explanations."
+      }
+    },
+    "shadows": [
+      {
+        "name": "menu",
+        "value": "0 16px 48px rgb(18 44 52 / .13)",
+        "purpose": "Dropdown separation."
+      },
+      {
+        "name": "action-hover",
+        "value": "0 5px 15px rgb(20 49 50 / .12)",
+        "purpose": "Hovered actions."
+      },
+      {
+        "name": "portrait-caption",
+        "value": "0 6px 24px rgb(29 47 50 / .04)",
+        "purpose": "Portrait overlay."
+      },
+      {
+        "name": "header-edge",
+        "value": "inset 0 1px 0 rgb(255 255 255 / .9)",
+        "purpose": "Compact-header highlight."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Shared CSS easing and reveals."
+      },
+      {
+        "name": "state-spring",
+        "value": "stiffness:140; damping:24",
+        "purpose": "MotionConfig default, including shared selection underline."
+      },
+      {
+        "name": "reveal",
+        "value": "duration:.65s; y:18px to 0; opacity:.55 to 1",
+        "purpose": "Once-per-view section entry; reduced-motion guarded."
+      },
+      {
+        "name": "header-contract",
+        "value": "width/min-height .6s var(--ease)",
+        "purpose": "Bounded requested header contraction only."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "1600px"
+      },
+      {
+        "name": "desktop",
+        "value": "1200px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1000px"
+      },
+      {
+        "name": "navigation",
+        "value": "800px"
+      },
+      {
+        "name": "stack",
+        "value": "600px"
+      },
+      {
+        "name": "narrow",
+        "value": "380px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Appointment or next-step action.",
+      "html": "<button class=\"ds-primary\">Book your visit <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:52px;padding:14px 23px;border:1px solid transparent;border-radius:3px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Manrope Variable',sans-serif;transition:background .25s,box-shadow .3s,transform .4s var(--ease,cubic-bezier(.16,1,.3,1));background:var(--teal,#315f5c);color:white;border-color:transparent;} .ds-primary:hover{background:#234d4b;box-shadow:0 5px 15px rgb(20 49 50 / .12);} .ds-primary:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;} .ds-primary svg{transition:transform .4s var(--ease,cubic-bezier(.16,1,.3,1));} .ds-primary:hover svg{transform:translate(3px,-2px);} @media(prefers-reduced-motion:reduce){.ds-primary,.ds-primary svg{transition:none;}}"
+    },
+    {
+      "name": "Light Button",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Appointment or next-step action.",
+      "html": "<button class=\"ds-light\">Book your visit <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></button>",
+      "css": ".ds-light{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:52px;padding:14px 23px;border:1px solid transparent;border-radius:3px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Manrope Variable',sans-serif;transition:background .25s,box-shadow .3s,transform .4s var(--ease,cubic-bezier(.16,1,.3,1));background:white;color:var(--ink,#172e3b);border-color:transparent;} .ds-light:hover{background:#edf2ef;box-shadow:0 5px 15px rgb(20 49 50 / .12);} .ds-light:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;} .ds-light svg{transition:transform .4s var(--ease,cubic-bezier(.16,1,.3,1));} .ds-light:hover svg{transform:translate(3px,-2px);} @media(prefers-reduced-motion:reduce){.ds-light,.ds-light svg{transition:none;}}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Appointment or next-step action.",
+      "html": "<button class=\"ds-outline\">Book your visit <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></button>",
+      "css": ".ds-outline{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:52px;padding:14px 23px;border:1px solid transparent;border-radius:3px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Manrope Variable',sans-serif;transition:background .25s,box-shadow .3s,transform .4s var(--ease,cubic-bezier(.16,1,.3,1));background:transparent;color:var(--ink,#172e3b);border-color:#b9c9c6;} .ds-outline:hover{background:var(--mist,#f0f4f3);box-shadow:0 5px 15px rgb(20 49 50 / .12);} .ds-outline:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;} .ds-outline svg{transition:transform .4s var(--ease,cubic-bezier(.16,1,.3,1));} .ds-outline:hover svg{transform:translate(3px,-2px);} @media(prefers-reduced-motion:reduce){.ds-outline,.ds-outline svg{transition:none;}}"
+    },
+    {
+      "name": "Underline Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "White desktop navigation with teal line states.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#home\" aria-current=\"page\">Home</a><a href=\"#people\">Our people</a><a href=\"#care\">Our care</a></nav>",
+      "css": ".ds-nav{display:flex;gap:27px;background:white;color:var(--ink,#172e3b);font-size:13px;font-weight:600;font-family:'Manrope Variable',sans-serif;}.ds-nav a{position:relative;padding:12px 0;color:inherit;text-decoration:none;}.ds-nav a:after{content:\"\";position:absolute;bottom:5px;left:0;width:100%;height:1px;background:var(--teal,#315f5c);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease,cubic-bezier(.16,1,.3,1));}.ds-nav a:hover:after,.ds-nav a[aria-current]:after{transform:scaleX(1)}.ds-nav a:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;}@media(prefers-reduced-motion:reduce){.ds-nav a:after{transition:none}}"
+    },
+    {
+      "name": "Service Tabs",
+      "kind": "custom",
+      "refersTo": "service-tab",
+      "description": "Selection uses an underline, not a pill.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\" aria-label=\"Care\"><button role=\"tab\" aria-selected=\"true\">Hearing</button><button role=\"tab\" aria-selected=\"false\">Tinnitus</button><button role=\"tab\" aria-selected=\"false\">Cognition</button></div>",
+      "css": ".ds-tabs{display:flex;gap:50px;border-bottom:1px solid #d5dfdc;}.ds-tabs button{position:relative;background:none;border:0;padding:10px 0 19px;min-width:100px;text-align:left;color:var(--muted,#586a70);font-size:17px;cursor:pointer;font-family:'Manrope Variable',sans-serif;}.ds-tabs button[aria-selected=true]{color:var(--ink,#172e3b)}.ds-tabs button[aria-selected=true]:after{content:\"\";position:absolute;height:2px;background:var(--teal,#315f5c);bottom:-1px;left:0;right:0}.ds-tabs button:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;}"
+    },
+    {
+      "name": "Assessment Panel",
+      "kind": "card",
+      "refersTo": "assessment-panel",
+      "description": "Quiet outlined reading surface.",
+      "html": "<section class=\"ds-panel\"><h2>A moment for how you\u2019re feeling.</h2><p>Five questions to prepare for a conversation with your audiologist.</p></section>",
+      "css": ".ds-panel{max-width:790px;padding:45px;background:white;border:1px solid var(--line,#dce3e3);border-radius:4px;color:var(--ink,#172e3b);font-family:'Manrope Variable',sans-serif;}.ds-panel h2{font-size:40px;font-weight:500;line-height:1.12;letter-spacing:-.04em;margin:0}.ds-panel p{font-size:14px;line-height:1.7;color:var(--muted,#586a70);margin:23px 0 0}@media(max-width:600px){.ds-panel{padding:28px 22px}.ds-panel h2{font-size:33px}}"
+    },
+    {
+      "name": "Numeric Radio",
+      "kind": "input",
+      "refersTo": "rating-option",
+      "description": "Numbered native radio with explicit selected and keyboard states.",
+      "html": "<div class=\"ds-rating\" role=\"radiogroup\" aria-label=\"Example rating\"><label><input type=\"radio\" name=\"ds-rating\" value=\"0\" aria-label=\"0 out of 10\"><span>0</span></label><label><input type=\"radio\" name=\"ds-rating\" value=\"1\" checked aria-label=\"1 out of 10\"><span>1</span></label><label><input type=\"radio\" name=\"ds-rating\" value=\"2\" aria-label=\"2 out of 10\"><span>2</span></label></div>",
+      "css": ".ds-rating{display:flex;gap:5px;color:var(--ink,#172e3b);font-family:'Manrope Variable',sans-serif;}.ds-rating label{position:relative;display:grid;place-items:center;min-height:46px;min-width:46px;border:1px solid var(--line,#dce3e3);font-size:13px;cursor:pointer;border-radius:2px}.ds-rating input{position:absolute;opacity:0;width:100%;height:100%;cursor:pointer;margin:0}.ds-rating label:has(input:checked){background:var(--teal,#315f5c);color:white;border-color:var(--teal,#315f5c)}.ds-rating label:has(input:focus-visible){outline:2px solid var(--teal,#315f5c);outline-offset:3px}"
+    },
+    {
+      "name": "Film Control",
+      "kind": "button",
+      "refersTo": "film-control",
+      "description": "Small translucent control over imagery.",
+      "html": "<div class=\"ds-media\"><button class=\"ds-film\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M6 4h4v16H6zM14 4h4v16h-4z\"/></svg>Pause film</button></div>",
+      "css": ".ds-media{background:#465a60;padding:30px}.ds-film{display:flex;align-items:center;gap:9px;color:white;min-height:38px;padding:8px 13px;background:rgb(255 255 255 / .12);border:1px solid rgb(255 255 255 / .3);border-radius:3px;backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 rgb(255 255 255 / .14);font-size:10px;cursor:pointer;font-family:'Manrope Variable',sans-serif;}.ds-film:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Cinematic patient journey",
+    "overview": "A calm, cinematic patient journey expressed through crisp white surfaces, deep blue ink, desaturated teal, and generous space. Manrope supplies both the large conversational headlines and precise functional labels. Genuine provider portraits and the original clinic logo carry the practice identity.\n\nThe build is predominantly flat and clinical. Translucency is selective: the compact navigation and small media or portrait overlays use blur and bright edges. Underlines identify navigation and service selection; corners stay nearly square. Motion connects state changes while reduced-motion preferences limit movement.",
+    "keyCharacteristics": [
+      "White clinical surfaces with teal actions and blue ink.",
+      "Generous split grids, precise dividers, and restrained rectangular controls.",
+      "Selective translucent overlays and a contracting navigation header.",
+      "Real provider imagery; illustrative care scenes remain identified."
+    ],
+    "rules": [
+      {
+        "name": "The Underline Navigation Rule",
+        "body": "Navigation and service selection use line indicators rather than pill backgrounds.",
+        "section": "colors"
+      },
+      {
+        "name": "The Selective Glass Rule",
+        "body": "Keep the main reading surfaces opaque; use the observed translucent treatments on navigation and small image or media overlays.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the existing white, ink, teal, muted, line, and mist roles.",
+      "Do preserve underline navigation and visible keyboard focus.",
+      "Do keep original provider portraits distinct from identified illustrative care scenes.",
+      "Do honor reduced-motion preferences and provide the film pause control."
+    ],
+    "donts": [
+      "Don't introduce pill navigation.",
+      "Don't turn the bounded header contraction into a general convention for animating layout dimensions.",
+      "Don't present illustrative scenes as real clinic staff or patient footage."
+    ]
+  }
+}

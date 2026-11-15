@@ -1,0 +1,31 @@
+{
+  "tool": "Built-in image_gen",
+  "assets": [
+    {
+      "path": "public/images/consultation.jpg",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed cinematic website hero for an independent audiology clinic. Create a high fidelity editorial photograph in landscape 16:9. A kind, professional female hearing-care clinician, in a clean white coat over slate clothing, gently demonstrating a tiny modern silver hearing aid to an older female patient with naturally silver hair. Modern bright clinical consulting room, restrained pale oak desk, softly out-of-focus frosted windows, muted blue-green furnishings. Candid warm interaction, authentic unretouched skin texture, natural hands and realistic device size. Subjects on the right two thirds, left third quiet and softly out of focus for readable overlaid text. Beautiful natural daylight, cinematic soft contrast, muted navy and stone white palette, Leica editorial photography, quiet luxury and clinical cleanliness. No logos, no text, no watermark, no stethoscope. These are illustrative fictional people, not portraits of any named provider. Save a project usable high-resolution image."
+    },
+    {
+      "path": "public/images/reception.jpg",
+      "prompt": "Use case: photorealistic-natural. Asset type: cinematic audiology website hero sequence scene. Landscape 16:9 editorial photograph, a friendly professional woman receptionist in her 30s with shoulder-length brown hair and ivory blouse, speaking on a discreet telephone headset, naturally smiling while arranging an appointment at a slim modern desktop computer, bright sophisticated small independent clinic reception, pale oak and limestone, a small leafy plant, immaculate white walls and natural window light. Patient viewpoint from across desk, subjects right two thirds, soft uncluttered negative space on left. Same quiet luxury photography, soft desaturated blue-gray and warm off-white palette, natural skin detail, shallow depth of field, no logos, no text, no watermark, no fake interface text, no stethoscope. Fictional illustrative staff."
+    },
+    {
+      "path": "public/images/connection.jpg",
+      "prompt": "Use case: photorealistic-natural. Asset type: audiology website editorial landscape photograph for cinematic scene. An older couple in their early 60s, a silver-haired woman and her partner, relaxed and genuinely connected while talking at a bright home dining table with open laptop, arranging a healthcare appointment. Landscape 16:9 composition, people on the right two thirds, quiet blurred home and daylight on left, natural candid moment, understated sophisticated home, pale oak, neutral linen clothing, desaturated blues and warm whites, premium editorial photography, visible realistic skin textures, no text, no logos, no watermark, no staged thumbs up, no children. Warm, clinically appropriate and human."
+    }
+  ],
+  "sourced": [
+    {
+      "path": "docs/reference-assets/robert-melton.png",
+      "origin": "https://htsaudiology.com/wp-content/uploads/2025/12/Robert-Melton.png"
+    },
+    {
+      "path": "docs/reference-assets/jen-hurst.png",
+      "origin": "https://htsaudiology.com/wp-content/uploads/2021/12/DSC_9895-a_700.png"
+    },
+    {
+      "path": "public/images/original-logo.png",
+      "origin": "https://htsaudiology.com/wp-content/uploads/2025/12/HTS-website-logo-scaled.png"
+    }
+  ]
+}

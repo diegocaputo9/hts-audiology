@@ -1,0 +1,4 @@
+{
+  "prompt": "Use case: background-extraction. Edit target: the actual attached photograph of Dr. Jen Hurst. Remove ONLY the gray-brown photographic backdrop to produce a clean transparent-background cutout of the exact same woman. Preserve her exact identity, facial features, proportions, expression, gaze, hair, skin texture, earrings, clothing, patterned blouse, white coat including embroidered name text, crossed-arm pose, and original crop. Do not beautify, redraw, recolor, relight, replace any features, or invent body parts. Keep white coat fully opaque and retain fine edge detail around hair and shoulders. Output actual alpha transparency around the person. Precise background removal only, not a new portrait.",
+  "createdAt": "2026-11-15T00:16:41.356Z"
+}

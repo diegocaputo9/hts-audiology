@@ -1,0 +1,4 @@
+{
+  "prompt": "Use case: background-extraction. Edit target: the attached actual photograph of Dr. Robert Melton. Remove ONLY the dark photographic backdrop to produce a clean transparent-background cutout of the exact same man. Preserve his exact identity, facial features, proportions, smile, gaze, skin texture, beard, clothing, patterned shirt, white coat, pose, and original crop. Do not beautify, redraw, recolor, relight, replace any features, or invent body parts. Keep white coat fully opaque, natural fine edge detail around head and shoulders. Output actual alpha transparency around the person. This is a precise background removal, not a new portrait.",
+  "createdAt": "2026-11-15T00:16:41.336Z"
+}
