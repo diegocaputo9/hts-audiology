@@ -14,6 +14,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
   useEffect(() => {
@@ -21,6 +22,15 @@ export function Header() {
     if (!sentinel) return;
     const observer = new IntersectionObserver(([entry]) => setScrolled(!entry.isIntersecting));
     observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+    const update = () => document.documentElement.style.setProperty('--site-header-height', `${header.getBoundingClientRect().height}px`);
+    const observer = new ResizeObserver(update);
+    observer.observe(header);
+    update();
     return () => observer.disconnect();
   }, []);
   useEffect(() => { setMobile(false); setDropdown(false); }, [path]);
@@ -33,7 +43,7 @@ export function Header() {
   }, []);
   return <>
     <div id="header-sentinel" aria-hidden="true" />
-    <header className={`site-header ${scrolled ? 'is-compact' : ''}`}>
+    <header ref={headerRef} className={`site-header ${scrolled ? 'is-compact' : ''}`}>
       <div className="header-inner">
         <Link href="/" className="brand" aria-label="Hearing and Tinnitus Solutions home"><img src={publicAsset("/images/original-logo.png")} width="2560" height="820" alt="Hearing & Tinnitus Solutions" /></Link>
         <nav className="desktop-nav" aria-label="Main navigation">
@@ -66,12 +76,8 @@ export function Footer() {
       <div><h2>Your visit</h2><Link href="/book/">Book an appointment</Link><Link href="/resources/">Patient resources</Link><Link href="/assessment/">Tinnitus check-in</Link><Link href="/contact/">Find our clinic</Link></div>
       <div><h2>Let’s talk</h2><a href={clinic.phoneHref}>{clinic.phone}</a><a href={`mailto:${clinic.email}`}>{clinic.email}</a><p>{clinic.address}<br />{clinic.city}</p></div>
     </div>
-    <section className="footer-qualifications" aria-labelledby="footer-qualifications-title">
-      <div className="footer-qualifications-heading"><h2 id="footer-qualifications-title">Provider qualifications</h2><a href="https://htsaudiology.com/about/" target="_blank" rel="noopener noreferrer">Practice profile <ArrowUpRight size={14} aria-hidden="true" /></a></div>
-      <dl className="footer-qualification-list">
-        <div><dt>Robert Melton, AuD, CH-TM</dt><dd>Doctor of Audiology · Auburn University</dd><dd>Certificate Holder–Tinnitus Management · American Board of Audiology</dd><dd>TRT training · Lenire® & Oto certified provider</dd></div>
-        <div><dt>Jen Hurst, AuD</dt><dd>Doctor of Audiology · A.T. Still University</dd></div>
-      </dl>
+    <section className="footer-badges" aria-label="Professional credentials">
+      <a className="credential-badge credential-badge-aba" href="https://www.audiology.org/american-board-of-audiology/aba-certificate-programs/" target="_blank" rel="noopener noreferrer"><img src={publicAsset('/images/credentials/american-board-of-audiology.png')} alt="American Board of Audiology" width="1200" height="620" loading="lazy" /><span>Robert Melton · CH-TM</span></a>
     </section>
     <div className="footer-bottom"><span>© {new Date().getFullYear()} Hearing & Tinnitus Solutions, P.C.</span><div><Link href="/privacy/">Privacy</Link><Link href="/accessibility/">Accessibility</Link><Link href="/privacy/#website-content-credits">Image credits</Link><a href="https://diegocaputo.com" target="_blank" rel="noopener noreferrer">Website by diegocaputo.com</a></div></div>
   </div></footer>;
