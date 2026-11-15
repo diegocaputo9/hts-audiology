@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Plus, ArrowUpRight } from 'lucide-react';
 import { useReducedMotion } from 'motion/react';
@@ -50,41 +50,73 @@ function ServiceDisclosure({ service }: { service: Service }) {
   const details = useRef<HTMLDetailsElement>(null);
   const content = useRef<HTMLDivElement>(null);
   const animation = useRef<Animation | null>(null);
+  const fade = useRef<Animation | null>(null);
   const desiredOpen = useRef(false);
   const [expanded, setExpanded] = useState(false);
   const reduced = useReducedMotion();
+
+  useEffect(() => () => {
+    animation.current?.cancel();
+    fade.current?.cancel();
+  }, []);
 
   function toggle(event: React.MouseEvent<HTMLElement>) {
     event.preventDefault();
     const element = details.current;
     const body = content.current;
     if (!element || !body) return;
-    const start = element.getBoundingClientRect().height;
+    // Keep fractional layout dimensions, independent of the summary's press scale.
+    const style = getComputedStyle(element);
+    const start = parseFloat(style.height);
+    const opacity = element.open ? getComputedStyle(body).opacity : '.65';
+    element.style.height = `${start}px`;
     animation.current?.cancel();
+    fade.current?.cancel();
     const open = !desiredOpen.current;
     desiredOpen.current = open;
     setExpanded(open);
-    if (reduced || event.detail === 0 || !element.animate) {
+    body.inert = !open;
+    if (reduced || window.matchMedia('(prefers-reduced-motion: reduce)').matches || event.detail === 0 || !element.animate) {
       element.open = open;
+      body.inert = false;
       element.style.height = '';
       element.style.overflow = '';
       animation.current = null;
+      fade.current = null;
       return;
     }
     element.open = true;
-    const summaryHeight = element.querySelector('summary')!.offsetHeight;
-    const end = summaryHeight + (open ? body.getBoundingClientRect().height : 0) + 2;
+    element.style.height = 'auto';
+    const naturalHeight = parseFloat(getComputedStyle(element).height);
+    const summary = element.querySelector('summary')!;
+    const border = parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth);
+    const collapsedHeight = parseFloat(getComputedStyle(summary).height) + border;
+    const end = open ? naturalHeight : collapsedHeight;
+    element.style.height = `${start}px`;
     element.style.overflow = 'hidden';
+    const easing = getComputedStyle(document.documentElement).getPropertyValue('--ease').trim();
+    const distance = Math.abs(end - start) / Math.max(1, naturalHeight - collapsedHeight);
+    const duration = Math.max(120, (open ? 280 : 240) * Math.min(1, distance));
     const active = element.animate(
       [{ height: `${start}px` }, { height: `${end}px` }],
-      { duration: 220, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'both' },
+      { duration, easing, fill: 'both' },
+    );
+    const reveal = body.animate(
+      [{ opacity }, { opacity: open ? 1 : .65 }],
+      { duration: Math.min(200, duration), easing, fill: 'both' },
     );
     animation.current = active;
+    fade.current = reveal;
     active.finished.then(() => {
       if (animation.current !== active) return;
       element.open = open;
+      body.inert = false;
+      // Commit the destination before removing the animation, avoiding an end-frame snap.
+      element.style.height = `${end}px`;
       active.cancel();
+      reveal.cancel();
       animation.current = null;
+      fade.current = null;
       element.style.height = '';
       element.style.overflow = '';
     }).catch(() => {});

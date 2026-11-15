@@ -204,7 +204,7 @@ The background slideshow crossfades between fixed photographs with no zoom or pa
 
 ### Service Disclosures
 
-Five named primary services use native details/summary semantics. The first three cards sit in a three-column row and the remaining two in a two-column row; the layout reduces to two columns at (1100px) and one at (600px). Summaries pair a plus icon with a (21–23px) title, (13px) subtitle, and a decorative teal line symbol on the right. Five authored SVGs share a 40-unit viewBox, thin rounded strokes, and 30–40px rendered sizes. Descriptions use (16px) body copy. Independent cards open or close over (220ms) with measured height, preserve interruption, and toggle instantly for reduced motion or keyboard activation.
+Five named primary services use native details/summary semantics. The first three cards sit in a three-column row and the remaining two in a two-column row; the layout reduces to two columns at (1100px) and one at (600px). Summaries pair a plus icon with a (21–23px) title, (13px) subtitle, and a decorative teal line symbol on the right. Five authored SVGs share a 40-unit viewBox, thin rounded strokes, and 30–40px rendered sizes. Descriptions use (16px) body copy. Independent cards open or close over (280ms opening / 240ms closing) with measured height, preserve interruption, and toggle instantly for reduced motion or keyboard activation.
 
 ### Liquid Sound Sculpture
 
@@ -240,3 +240,5 @@ The contact dialog uses native `showModal()`, a labeled heading, automatic focus
 The care explorer, primary-service details, and location section use tighter top padding (84px desktop, 64px tablet, 48px phone), while retaining their existing lower spacing. Contact-specific location spacing remains 64px/44px. The standalone home cognition photo section is removed; cognition remains available through navigation and the care explorer. Resource-item symbols sit to the left within their heading’s flex row. Research-note action links keep their single bottom border without a second text underline.
 
 The home care explorer uses three dedicated editorial illustrations: Dr. Melton discussing hearing-test results, a home sound-therapy scene for tinnitus, and a family conversation over a tabletop puzzle for cognition. These are separate from the preserved hero imagery. Each has 1440×960 and 720×480 WebP variants, native lazy loading, and descriptive alt text. The generated Dr. Melton scene uses his existing portrait as the identity reference; provenance remains in the privacy notice.
+
+Service disclosures use fractional measured heights with a frozen current frame during interruption, 280ms opening/240ms closing scaled to remaining distance, and a coordinated 200ms description fade. They share the existing ease token. Keyboard activation and reduced motion toggle instantly; closing content is inert during collapse.

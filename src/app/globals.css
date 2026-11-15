@@ -342,6 +342,7 @@ button:disabled { cursor:not-allowed; }
 .service-disclosures { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:18px; align-items:start; }
 .service-disclosure { grid-column:span 2; border:1px solid var(--line); border-radius:3px; background:white; scroll-margin-top:110px; }
 .service-disclosure:nth-child(n+4) { grid-column:span 3; }
+.service-disclosure { transition:background-color 220ms var(--ease); }
 .service-disclosure[data-expanded=true] { background:#f5f8f6; }
 .service-disclosure summary { list-style:none; display:flex; align-items:flex-start; gap:13px; padding:26px 23px; min-height:124px; }
 .service-disclosure summary::-webkit-details-marker { display:none; }
