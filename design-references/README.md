@@ -31,3 +31,9 @@ Check slow scrolling, fast swipes, reverse scrolling, 320px phone width, Spanish
 ## Validation
 
 Production export and TypeScript passed. Six questionnaire scoring/feedback tests passed. Browser checks covered 320, 390, 1168 and 1440px widths: heading timing/state, entry fade, fully opaque reading zone, no repeated title typing, unchanged hero font sizes, static portrait surfaces, uninterrupted offscreen slideshow, Spanish wrapping, reduced motion, print and JavaScript disabled. WebKit phone checks passed for masked headings, native timeline support and Spanish switching. Full page accessibility checks use a static reduced motion state to avoid sampling temporary fading colors. Existing bilingual navigation, contact dialog, social links, share metadata and assessment state were also rechecked.
+
+## Subsequent client refinement
+
+The client requested a narrower use of the reference: keep home masks only on the provider title and ringing feature, at 900ms per line; follow the provider title with a gentle upward bio fade. Remove hero typing and its group fade, expertise/primary services/location/closing masks, care page title masks and resource page masks. Contact retains only its primary title mask. Wrapper fades are disabled around these static titles. See DESIGN.md for the current implementation and hero poster/loading improvements; this refinement supersedes the broader initial adaptation above.
+
+The refinement passed production export, TypeScript, six scoring tests, and phone/desktop browser checks with the video request deliberately held back. The still photo and immediate heading remained visible while video waited; playback became visible after a presented frame. Verified static/animated title scope on hearing, tinnitus, cognition, resources, about and contact routes, 900ms title/700ms bio timing, reduced motion and accessibility. WebKit checks passed for playback, pause/play, bio visibility and Spanish text.

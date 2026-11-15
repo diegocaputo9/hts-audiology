@@ -8,17 +8,17 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowUpRight, Pause, Play, MapPin } from 'lucide-react';
 import { LocalizedLink as Link } from '@/components/language';
 import { clinic } from '@/lib/clinic';
-import { MotionHeading } from './motion-heading';
 
-export function Reveal({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+export function Reveal({ children, className = '', still = false }: { children: React.ReactNode; className?: string; still?: boolean }) {
   // Protect the portrait story and patient contact/service controls from scroll fading.
   const staticContent = /(?:^| )(?:provider-(?:portrait|copy)|visit-grid|service-disclosures)(?: |$)/.test(className);
-  return <div className={`${className}${staticContent ? '' : ' reveal-surface'}`}><T>{children}</T></div>;
+  return <div className={`${className}${still || staticContent ? '' : ' reveal-surface'}`}><T>{children}</T></div>;
 }
 
 export function Hero() {
   const video = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
+  const [ready, setReady] = useState(false);
   const reduce = useReducedMotion();
   useEffect(() => {
     const el = video.current;
@@ -28,10 +28,10 @@ export function Hero() {
   }, [reduce]);
   const toggle = () => { const el = video.current; if (!el) return; if (el.paused) el.play().then(() => setPlaying(true)).catch(() => setPlaying(false)); else { el.pause(); setPlaying(false); } };
   return <section className="hero" aria-labelledby="hero-heading">
-    <LocalizedElement as="img" className="hero-poster" src={publicAsset("/images/consultation.jpg")} width="1672" height="941" fetchPriority="high" alt="Illustrative audiology consultation with an older adult in a bright clinic" />
-    <video ref={video} className="hero-video" loop muted playsInline preload="metadata" poster={publicAsset("/images/consultation.jpg")} width="1920" height="1080" aria-hidden="true"><source src={publicAsset("/video/patient-journey.mp4")} type="video/mp4" /></video>
+    <LocalizedElement as="img" className="hero-poster" src={publicAsset("/images/consultation-hero.webp")} srcSet={`${publicAsset("/images/consultation-hero-720.webp")} 720w, ${publicAsset("/images/consultation-hero.webp")} 1672w`} sizes="100vw" width="1672" height="941" fetchPriority="high" alt="Illustrative audiology consultation with an older adult in a bright clinic" />
+    <video ref={video} className="hero-video" data-ready={ready} autoPlay loop muted playsInline preload="auto" onPlaying={event => { setPlaying(true); const el = event.currentTarget; if (el.requestVideoFrameCallback) el.requestVideoFrameCallback(() => setReady(true)); else setReady(el.readyState >= 2); }} onError={() => { setReady(false); setPlaying(false); }} width="1920" height="1080" aria-hidden="true"><source src={publicAsset("/video/patient-journey.mp4")} type="video/mp4" /></video>
     <div className="hero-shade" />
-    <div className="hero-content"><MotionHeading as="h1" id="hero-heading"><T>Life sounds</T><br /><T>better connected.</T></MotionHeading><p><T>Expert hearing and tinnitus care.</T><br /><T>Centered on you, here in Pagosa Springs.</T></p><Link href="/book/" className="button button-light"><T>Let’s find your clarity </T><ArrowUpRight size={18} /></Link><a href="#meet-dr-melton" className="hero-secondary"><T>Get to know your care team </T><ArrowDown size={15} /></a></div>
+    <div className="hero-content"><h1 id="hero-heading"><T>Life sounds</T><br /><T>better connected.</T></h1><p><T>Expert hearing and tinnitus care.</T><br /><T>Centered on you, here in Pagosa Springs.</T></p><Link href="/book/" className="button button-light"><T>Let’s find your clarity </T><ArrowUpRight size={18} /></Link><a href="#meet-dr-melton" className="hero-secondary"><T>Get to know your care team </T><ArrowDown size={15} /></a></div>
     <div className="hero-bottom"><span><MapPin size={15} /> <T>Pagosa Springs, Colorado</T></span><div><LocalizedElement as="button" onClick={toggle} className="film-control" aria-label={playing ? 'Pause background slideshow' : 'Play background slideshow'}>{playing ? <Pause size={15} /> : <Play size={15} />}<span><T>{playing ? 'Pause slideshow' : 'Play slideshow'}</T></span></LocalizedElement></div></div>
   </section>;
 }
