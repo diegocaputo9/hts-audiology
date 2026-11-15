@@ -772,3 +772,22 @@ html[lang=es] .desktop-nav { gap:12px; }
 @media print {
   .heading-follow,.provider-copy.heading-sequence > :not(.motion-heading) { animation:none !important; opacity:1 !important; transform:none !important; }
 }
+
+/* Contact: one coordinated introduction, map, and practical visit information. */
+.people-sequence { --support-offset:16px; }
+.contact-intro-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(32px,5vw,80px); align-items:start; }
+.contact-intro-copy,.contact-intro-map { min-inline-size:0; }
+.contact-intro-copy .page-heading { padding-block-end:24px; }
+.contact-intro-map { padding-block-start:40px; align-self:stretch; }
+.contact-intro-map .map-panel { block-size:100%; min-block-size:440px; }
+.contact-intro-map iframe { display:block; flex:1 1 0; block-size:0; min-block-size:0; }
+.contact-visit-reveal .visit-section { border-block-start:0; padding-block-start:64px; }
+.contact-visit-faq h3 { font-size:30px; line-height:1.2; }
+.contact-visit-faq > .text-link { margin-block:18px 24px; }
+@media(max-width:800px) {
+  .contact-intro-grid { grid-template-columns:minmax(0,1fr); gap:28px; }
+  .contact-intro-map { padding-block-start:0; }
+  .contact-intro-map .map-panel { block-size:360px; min-block-size:360px; }
+  .contact-visit-reveal .visit-section { padding-block-start:44px; }
+}
+@media(max-width:600px) { .contact-visit-faq h3 { font-size:28px; } }
