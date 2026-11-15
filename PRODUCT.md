@@ -20,3 +20,5 @@ Clinical, modern, sleek, high whitespace, white navigation, understated teal/nav
 Clear routes to care. Patient privacy by default. Honest clinical evidence. Accessible motion and readable content.
 
 Motion rhythm: 0.16s presses, 0.7s subtle content reveals, and 1.2s scene transitions. Content remains readable during reveals; images do not drift. Reduced motion preserves final visible states.
+
+On phones, the tinnitus check in uses a native 0 to 10 slider with every level marked; desktop keeps discrete radio ratings. No answer is inferred from the slider’s initial position. Both controls share answer, feedback and score state, with no saved or transmitted responses. The phone provider bio includes one additional paragraph and the existing external screening link.
