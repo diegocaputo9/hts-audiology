@@ -11,7 +11,7 @@ The website is a complete static marketing build. Medical information and provid
 - Supply a scheduling provider and access/configuration before adding live availability. The current site’s Book Appointment link points to an internal `#bookappt` anchor, so no real scheduling integration could be carried over. The included day planner never claims to reserve a time.
 - The full Tinnitus Functional Index is copyrighted by OHSU. Obtain the necessary permission and clinician-approved form/results specification before implementing it. The shipped five-question reflection is original and intentionally does not use TFI branding, thresholds, or claims of validation.
 - Confirm whether Dr. Hurst currently sees patients before adding availability or appointment booking for her. Her profile describes the founding history already published by the practice.
-- Replace the cinematic still-image edit with approved filmed or AI-generated motion footage if the complete 4K patient journey described in the brief is required. Higgsfield was not connected for this build.
+- Replace the stationary still-image crossfade edit with approved filmed or AI-generated motion footage if the complete 4K patient journey described in the brief is required. Higgsfield was not connected for this build.
 - Confirm the final domain and switch off review indexing restrictions only at public launch.
 
 ## Patient data and hosting
@@ -36,4 +36,8 @@ Before any future service creates, receives, stores, or transmits electronic pro
 
 `public/_headers` declares a CSP, no-referrer policy, frame protection, MIME-sniffing prevention, browser feature restrictions, and HSTS for Cloudflare Pages. The CSP permits inline scripts/styles because Next static exports include inline hydration payloads and Motion uses style attributes. It limits external frames to Google Maps. The actual deployed headers must be verified on the chosen host; source declarations alone do not establish production enforcement.
 
-No advertising, cookies, analytics, third-party fonts, patient-data requests, or health information in URL parameters are introduced by the application. Browser extensions, host authentication, and visitors' own print/email tools are outside the application.
+No advertising pixels, website analytics, third-party fonts, patient-data requests, or health information in URL parameters are introduced by the application. The automatically embedded Google map may use cookies or similar technologies under Google’s own policy. Browser extensions, host authentication, and visitors' own print/email tools are outside the application.
+
+## Privacy refinement
+
+The supplied existing policy was reviewed and adapted to this implementation. Customer-care SMS terms include opt-in, variable message frequency, possible rates, HELP, STOP, and the restriction on sharing SMS consent. Removed generic references to nonexistent accounts, orders, competitions, and GPS collection. The map now loads automatically at the user’s request, which is reflected in the notice. The public website retains noindex for review; the source repository remains private.

@@ -37,7 +37,12 @@ typography:
     lineHeight: 1.7
   copy:
     fontFamily: "Manrope Variable, sans-serif"
-    fontSize: "14px"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: 1.8
+  annotation:
+    fontFamily: "Manrope Variable, sans-serif"
+    fontSize: "12px"
     fontWeight: 400
     lineHeight: 1.7
   label:
@@ -144,14 +149,14 @@ The palette combines cool clinical whites with desaturated green-blue actions an
 - **Display:** Hero headline uses the display token; mobile overrides use a fluid smaller clamp. Interior page headings use their own responsive sizes.
 - **Headline / Title:** Global second- and third-level headings use their respective tokens. Individual provider and service compositions adjust those sizes in source.
 - **Body:** The body token establishes the base. Paragraphs are limited to (68ch).
-- **Copy:** Most supporting prose uses the smaller copy role; provider paragraphs increase leading to (1.9).
-- **Label:** Semibold navigation, actions, and FAQ summaries. Secondary interface annotations are smaller in the current build; they do not establish a reusable small-text scale.
+- **Copy:** Reading paragraphs use (16px) with (1.8) leading. Supporting labels use (12–15px). No interface text is below (12px), including at mobile breakpoints.
+- **Label:** Actions use semibold labels, navigation uses (14px), and FAQ summaries use (15px). Annotations use the (12px) minimum token.
 
 ## Layout
 
 The content container is centered, capped at (1280px), with desktop width `calc(100% - 128px)`. Its horizontal allowance becomes (90px) at the (1200px) breakpoint and (48px) at (800px). The header has its own (1440px) cap and desktop width `calc(100% - 80px)`.
 
-Sections have generous vertical rhythm: the section spacing token reduces to (90px) at (1000px), then (70px) at (600px). Split grids pair images and text, typically with gaps of (5–9%). Supporting content uses divider rows rather than an interchangeable card grid. Most paired content becomes one column at (600px). The desktop navigation switches to a stacked mobile menu at (800px).
+Sections have generous vertical rhythm: the section spacing token reduces to (90px) at (1000px), then (70px) at (600px). Split grids pair images and text, typically with gaps of (5–9%). Supporting content uses divider rows rather than an interchangeable card grid. Most paired content becomes one column at (600px). The desktop navigation switches to a stacked mobile menu at (1100px) to preserve readable labels and spacing.
 
 The assessment is capped at (790px), with desktop panel padding from its component token; mobile padding becomes (28px 22px), with (16px) outer margins. Its eleven numeric responses wrap into six columns on mobile. The booking calendar remains a seven-column grid.
 
@@ -169,13 +174,13 @@ Depth comes mainly from tonal panels, photography, and thin boundaries. Small ov
 
 ## Shapes
 
-Controls and photographic containers use the small control radius. Numeric selections use the selection radius; the assessment and dropdown use their separate modest radii. Boundaries are usually single-pixel hairlines. The portrait backdrop's arched top and the round map pin are local image/location forms, not general control shapes. Navigation is unboxed with line indicators.
+Controls and photographic containers use the small control radius. Numeric selections use the selection radius; the assessment and dropdown use their separate modest radii. Boundaries are usually single-pixel hairlines. The portrait backdrop's arched top is a local image form, not general control shapes. Navigation is unboxed with line indicators.
 
 ## Components
 
 ### Buttons
 
-Compact rectangular actions with clear contrast. Primary, light, and outline variants share the base geometry, a minimum height of (52px), semibold labels, and icon gap of (28px). The header action is smaller. Hover deepens the fill, adds the action shadow, and shifts the arrow (3px, -2px). The outline variant uses the soft-outline border and mist hover. Global keyboard focus is a (2px) outline with (6px) offset. Disabled assessment actions have opacity (.4).
+Compact rectangular actions with clear contrast. Primary, light, and outline variants share the base geometry, a minimum height of (52px), semibold labels, and icon gap of (28px). The header action is smaller. Hover deepens the fill, adds the action shadow, and shifts the arrow (3px, -2px). The outline variant uses the soft-outline border and mist hover. Global keyboard focus is a (2px) outline with (6px) offset. Disabled assessment actions have opacity (.4). Pressable actions compress to (.975) over (160ms), then settle with a small rebound over (300ms); spatial feedback is removed for reduced motion. Hover motion is gated to fine pointers.
 
 ### Cards / Containers
 
@@ -191,11 +196,23 @@ The desktop header starts with a (104px) minimum height and contracts to (78px);
 
 ### Service Explorer
 
-Text tabs sit over a hairline with a shared (2px) teal selection underline. Keyboard arrows, Home, and End move selection and focus. The underline uses a shared layout identity; panel changes use a brief opacity/vertical transition (.25s). The default spring is stiffness (140), damping (24). This is the recurring state-morphing interaction, not a license for unrelated ambient motion.
+Text tabs sit over a hairline with a shared (3px) teal selection underline. Keyboard arrows, Home, and End move selection and focus. The underline uses a shared layout identity with a spring of duration (.5s) and bounce (.2); panel changes use a brief opacity/vertical transition (.25s). Hover scales tab labels to (1.06), and the home care shortcuts scale their headings to (1.055). The default spring is stiffness (140), damping (24). This is the recurring state-morphing interaction, not a license for unrelated ambient motion.
 
-### Film and Reveals
+### Still-image Slideshow and Reveals
 
-The background film has an explicit play/pause control and visible illustrative provenance. Reduced motion and data-saving preferences suppress autoplay; leaving the viewport pauses playback. Reveals run once with (18px) upward travel, opacity (.55 to 1), and duration (.65s), using `cubic-bezier(.16,1,.3,1)`. The connection photograph has a progressive, reduced-motion-gated scroll drift; the listening bars have one five-second breathing cycle. Reduced-motion CSS removes selected transitions and smooth scrolling; MotionConfig honors the user preference.
+The background slideshow crossfades between fixed photographs with no zoom or pan. An explicit play/pause control remains; the hero’s provenance badge was removed at the user’s request, with provenance kept in the privacy notice. Reduced motion and data-saving preferences suppress autoplay; leaving the viewport pauses playback. Reveals use opacity only (.7 to 1), duration (.65s), and the shared ease; images have no scroll drift.
+
+### Service Disclosures
+
+Five named primary services use native details/summary semantics. The first three cards sit in a three-column row and the remaining two in a two-column row; the layout reduces to two columns at (1100px) and one at (600px). Summaries pair a plus icon with a (22–23px) title and (12–13px) subtitle. Descriptions use (16px) body copy. Independent cards open or close over (220ms) with measured height, preserve interruption, and toggle instantly for reduced motion or keyboard activation.
+
+### Liquid Sound Sculpture
+
+A silent Canvas 2D graphic draws (33) reflective vertical capsules. Slow harmonics vary their silhouette; the pointer affects nearby lines through a spring with stiffness (100) and damping (10). The graphic pauses outside the viewport or a hidden tab and includes a visible pause control. Reduced motion defaults to a static frame; users can explicitly play it. The reflective colors are a local decorative material, not a new action palette.
+
+### Location
+
+Google Maps is embedded automatically, with an always-visible directions link and the clinic email next to the telephone. The privacy notice discloses the automatic third-party connection. The old schematic placeholder is no longer used.
 
 ### FAQ Rows
 
@@ -206,8 +223,8 @@ Native disclosure rows use dividers, semibold question text, and a plus SVG that
 ### Do:
 - **Do** use the existing white, ink, teal, muted, line, and mist roles.
 - **Do** preserve underline navigation and visible keyboard focus.
-- **Do** keep original provider portraits distinct from identified illustrative care scenes.
-- **Do** honor reduced-motion preferences and provide the film pause control.
+- **Do** keep original provider portraits distinct from illustrative care scenes, with imagery provenance in the privacy notice.
+- **Do** honor reduced-motion preferences and provide slideshow and ambient-animation pause controls.
 
 ### Don't:
 - **Don't** introduce pill navigation.

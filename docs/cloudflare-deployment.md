@@ -16,4 +16,4 @@ Sources checked November 14, 2026:
 - [Cloudflare: deploy a static Next.js site](https://developers.cloudflare.com/pages/framework-guides/nextjs/deploy-a-static-nextjs-site/)
 - [Cloudflare: custom response headers](https://developers.cloudflare.com/pages/configuration/headers/)
 
-The included private Sites preview is independent from deployment into the client's own Cloudflare account.
+The included Sites review deployment is independent from deployment into the client's own Cloudflare account.

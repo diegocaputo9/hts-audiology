@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-15T03:24:47.203114+00:00",
+  "generatedAt": "2026-11-14T22:00:00-06:00",
   "title": "Design System: Hearing & Tinnitus Solutions",
   "extensions": {
     "colorMeta": {
@@ -139,6 +139,10 @@
       "copy": {
         "displayName": "Supporting copy",
         "purpose": "Common clinical explanations."
+      },
+      "annotation": {
+        "displayName": "Readable annotation",
+        "purpose": "12px minimum at every viewport; main reading copy is 16px."
       }
     },
     "shadows": [
@@ -183,6 +187,21 @@
         "name": "header-contract",
         "value": "width/min-height .6s var(--ease)",
         "purpose": "Bounded requested header contraction only."
+      },
+      {
+        "name": "press-feedback",
+        "value": "scale .975; 160ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "Immediate tactile feedback for links, buttons, service summaries, and rating options."
+      },
+      {
+        "name": "press-return",
+        "value": "300ms linear(0,.45 15%,1.08 35%,.97 55%,1.01 75%,1)",
+        "purpose": "A small interruptible rebound, with a shared-ease fallback and a static reduced-motion path."
+      },
+      {
+        "name": "service-disclosure",
+        "value": "height 220ms cubic-bezier(.16,1,.3,1)",
+        "purpose": "Measured native service-card expansion; instant for keyboard or reduced motion."
       }
     ],
     "breakpoints": [
@@ -199,7 +218,7 @@
         "value": "1000px"
       },
       {
-        "name": "navigation",
+        "name": "intermediate",
         "value": "800px"
       },
       {
@@ -209,6 +228,10 @@
       {
         "name": "narrow",
         "value": "380px"
+      },
+      {
+        "name": "navigation-collapse",
+        "value": "1100px"
       }
     ]
   },
@@ -219,7 +242,7 @@
       "refersTo": "button-primary",
       "description": "Appointment or next-step action.",
       "html": "<button class=\"ds-primary\">Book your visit <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></button>",
-      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:52px;padding:14px 23px;border:1px solid transparent;border-radius:3px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Manrope Variable',sans-serif;transition:background .25s,box-shadow .3s,transform .4s var(--ease,cubic-bezier(.16,1,.3,1));background:var(--teal,#315f5c);color:white;border-color:transparent;} .ds-primary:hover{background:#234d4b;box-shadow:0 5px 15px rgb(20 49 50 / .12);} .ds-primary:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;} .ds-primary svg{transition:transform .4s var(--ease,cubic-bezier(.16,1,.3,1));} .ds-primary:hover svg{transform:translate(3px,-2px);} @media(prefers-reduced-motion:reduce){.ds-primary,.ds-primary svg{transition:none;}}"
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:52px;padding:14px 23px;border:1px solid transparent;border-radius:3px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Manrope Variable',sans-serif;transition:background .25s,box-shadow .3s,transform .4s var(--ease,cubic-bezier(.16,1,.3,1));background:var(--teal,#315f5c);color:white;border-color:transparent;} .ds-primary:hover{background:#234d4b;box-shadow:0 5px 15px rgb(20 49 50 / .12);} .ds-primary:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;} .ds-primary svg{transition:transform .4s var(--ease,cubic-bezier(.16,1,.3,1));} .ds-primary:hover svg{transform:translate(3px,-2px);} @media(prefers-reduced-motion:reduce){.ds-primary,.ds-primary svg{transition:none;}} .ds-btn-primary:active,.ds-btn-light:active,.ds-btn-outline:active { scale:.975; } @media (prefers-reduced-motion:reduce) { .ds-btn-primary:active,.ds-btn-light:active,.ds-btn-outline:active { scale:1; } }"
     },
     {
       "name": "Light Button",
@@ -227,7 +250,7 @@
       "refersTo": "button-light",
       "description": "Appointment or next-step action.",
       "html": "<button class=\"ds-light\">Book your visit <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></button>",
-      "css": ".ds-light{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:52px;padding:14px 23px;border:1px solid transparent;border-radius:3px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Manrope Variable',sans-serif;transition:background .25s,box-shadow .3s,transform .4s var(--ease,cubic-bezier(.16,1,.3,1));background:white;color:var(--ink,#172e3b);border-color:transparent;} .ds-light:hover{background:#edf2ef;box-shadow:0 5px 15px rgb(20 49 50 / .12);} .ds-light:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;} .ds-light svg{transition:transform .4s var(--ease,cubic-bezier(.16,1,.3,1));} .ds-light:hover svg{transform:translate(3px,-2px);} @media(prefers-reduced-motion:reduce){.ds-light,.ds-light svg{transition:none;}}"
+      "css": ".ds-light{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:52px;padding:14px 23px;border:1px solid transparent;border-radius:3px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Manrope Variable',sans-serif;transition:background .25s,box-shadow .3s,transform .4s var(--ease,cubic-bezier(.16,1,.3,1));background:white;color:var(--ink,#172e3b);border-color:transparent;} .ds-light:hover{background:#edf2ef;box-shadow:0 5px 15px rgb(20 49 50 / .12);} .ds-light:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;} .ds-light svg{transition:transform .4s var(--ease,cubic-bezier(.16,1,.3,1));} .ds-light:hover svg{transform:translate(3px,-2px);} @media(prefers-reduced-motion:reduce){.ds-light,.ds-light svg{transition:none;}} .ds-btn-primary:active,.ds-btn-light:active,.ds-btn-outline:active { scale:.975; } @media (prefers-reduced-motion:reduce) { .ds-btn-primary:active,.ds-btn-light:active,.ds-btn-outline:active { scale:1; } }"
     },
     {
       "name": "Outline Button",
@@ -235,7 +258,7 @@
       "refersTo": "button-outline",
       "description": "Appointment or next-step action.",
       "html": "<button class=\"ds-outline\">Book your visit <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></button>",
-      "css": ".ds-outline{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:52px;padding:14px 23px;border:1px solid transparent;border-radius:3px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Manrope Variable',sans-serif;transition:background .25s,box-shadow .3s,transform .4s var(--ease,cubic-bezier(.16,1,.3,1));background:transparent;color:var(--ink,#172e3b);border-color:#b9c9c6;} .ds-outline:hover{background:var(--mist,#f0f4f3);box-shadow:0 5px 15px rgb(20 49 50 / .12);} .ds-outline:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;} .ds-outline svg{transition:transform .4s var(--ease,cubic-bezier(.16,1,.3,1));} .ds-outline:hover svg{transform:translate(3px,-2px);} @media(prefers-reduced-motion:reduce){.ds-outline,.ds-outline svg{transition:none;}}"
+      "css": ".ds-outline{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:52px;padding:14px 23px;border:1px solid transparent;border-radius:3px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Manrope Variable',sans-serif;transition:background .25s,box-shadow .3s,transform .4s var(--ease,cubic-bezier(.16,1,.3,1));background:transparent;color:var(--ink,#172e3b);border-color:#b9c9c6;} .ds-outline:hover{background:var(--mist,#f0f4f3);box-shadow:0 5px 15px rgb(20 49 50 / .12);} .ds-outline:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;} .ds-outline svg{transition:transform .4s var(--ease,cubic-bezier(.16,1,.3,1));} .ds-outline:hover svg{transform:translate(3px,-2px);} @media(prefers-reduced-motion:reduce){.ds-outline,.ds-outline svg{transition:none;}} .ds-btn-primary:active,.ds-btn-light:active,.ds-btn-outline:active { scale:.975; } @media (prefers-reduced-motion:reduce) { .ds-btn-primary:active,.ds-btn-light:active,.ds-btn-outline:active { scale:1; } }"
     },
     {
       "name": "Underline Navigation",
@@ -275,7 +298,14 @@
       "refersTo": "film-control",
       "description": "Small translucent control over imagery.",
       "html": "<div class=\"ds-media\"><button class=\"ds-film\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" aria-hidden=\"true\"><path d=\"M6 4h4v16H6zM14 4h4v16h-4z\"/></svg>Pause film</button></div>",
-      "css": ".ds-media{background:#465a60;padding:30px}.ds-film{display:flex;align-items:center;gap:9px;color:white;min-height:38px;padding:8px 13px;background:rgb(255 255 255 / .12);border:1px solid rgb(255 255 255 / .3);border-radius:3px;backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 rgb(255 255 255 / .14);font-size:10px;cursor:pointer;font-family:'Manrope Variable',sans-serif;}.ds-film:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;}"
+      "css": ".ds-media{background:#465a60;padding:30px}.ds-film{display:flex;align-items:center;gap:9px;color:white;min-height:38px;padding:8px 13px;background:rgb(255 255 255 / .12);border:1px solid rgb(255 255 255 / .3);border-radius:3px;backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 rgb(255 255 255 / .14);font-size:10px;cursor:pointer;font-family:'Manrope Variable',sans-serif;}.ds-film:focus-visible{outline:2px solid var(--focus,#477c76);outline-offset:6px;} .ds-btn-primary:active,.ds-btn-light:active,.ds-btn-outline:active { scale:.975; } @media (prefers-reduced-motion:reduce) { .ds-btn-primary:active,.ds-btn-light:active,.ds-btn-outline:active { scale:1; } }"
+    },
+    {
+      "name": "Service disclosure",
+      "kind": "custom",
+      "description": "An independent native expandable service description, with readable title and copy.",
+      "html": "<details class=\"ds-service\"><summary>Hearing exams</summary><p>A comprehensive exam checks ear health, hearing levels, and speech understanding.</p></details>",
+      "css": ".ds-service{border:1px solid #dce3e3;border-radius:3px;color:#172e3b;background:#fff}.ds-service summary{padding:24px;font:500 22px Manrope,sans-serif;cursor:pointer;min-height:44px}.ds-service p{padding:0 24px 24px;font:400 16px/1.8 Manrope,sans-serif;color:#586a70}.ds-service summary:hover{background:#f0f4f3}.ds-service summary:focus-visible{outline:2px solid #477c76;outline-offset:3px}"
     }
   ],
   "narrative": {
@@ -302,8 +332,8 @@
     "dos": [
       "Do use the existing white, ink, teal, muted, line, and mist roles.",
       "Do preserve underline navigation and visible keyboard focus.",
-      "Do keep original provider portraits distinct from identified illustrative care scenes.",
-      "Do honor reduced-motion preferences and provide the film pause control."
+      "Do keep original provider portraits distinct from illustrative care scenes with provenance in the privacy notice.",
+      "Do honor reduced-motion preferences and provide the slideshow and ambient-animation pause controls."
     ],
     "donts": [
       "Don't introduce pill navigation.",
