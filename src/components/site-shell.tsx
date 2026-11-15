@@ -8,6 +8,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 import { AnimatePresence, motion, MotionConfig } from 'motion/react';
 import { ArrowUpRight, ChevronDown, Menu, X } from 'lucide-react';
 import { clinic } from '@/lib/clinic';
+import { motionTiming, motionEase } from '@/lib/motion';
 
 export function Header() {
   const path = usePathname();
@@ -51,7 +52,7 @@ export function Header() {
           <Link className={`nav-link ${path === '/about/' ? 'active' : ''}`} href="/about/" aria-current={path === '/about/' ? 'page' : undefined}>Our people</Link>
           <div className="nav-dropdown" ref={menuRef} onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setDropdown(false); }}>
             <button className={`nav-link ${['/hearing/', '/tinnitus/', '/cognition/'].includes(path) ? 'active' : ''}`} onClick={() => setDropdown(!dropdown)} aria-expanded={dropdown} aria-controls="care-menu">Our care <ChevronDown size={13} className={dropdown ? 'rotate' : ''} /></button>
-            <AnimatePresence>{dropdown && <motion.div className="care-menu" id="care-menu" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 4 }} transition={{ duration: .18 }}>
+            <AnimatePresence>{dropdown && <motion.div className="care-menu" id="care-menu" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 4 }} transition={{ type: 'tween', duration: motionTiming.press, ease: motionEase }}>
               {[['Hearing', 'A clearer connection', '/hearing/'], ['Tinnitus', 'Find a way forward', '/tinnitus/'], ['Cognition', 'The bigger picture', '/cognition/']].map(([title, desc, href]) => <Link key={href} href={href}><span>{title}<small>{desc}</small></span><ArrowUpRight size={17} /></Link>)}
             </motion.div>}</AnimatePresence>
           </div>
@@ -61,7 +62,7 @@ export function Header() {
         <Link href="/book/" className="button header-cta">Book a visit <ArrowUpRight size={16} /></Link>
         <button ref={trigger} className="mobile-toggle icon-button" onClick={() => setMobile(!mobile)} aria-expanded={mobile} aria-controls="mobile-nav" aria-label={mobile ? 'Close navigation' : 'Open navigation'}>{mobile ? <X /> : <Menu />}</button>
       </div>
-      <AnimatePresence>{mobile && <motion.nav id="mobile-nav" className="mobile-nav" aria-label="Mobile navigation" initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: .25 }}>
+      <AnimatePresence>{mobile && <motion.nav id="mobile-nav" className="mobile-nav" aria-label="Mobile navigation" initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ type: 'tween', duration: motionTiming.press, ease: motionEase }}>
         {[['Home', '/'], ['Our people', '/about/'], ['Hearing', '/hearing/'], ['Tinnitus', '/tinnitus/'], ['Cognition', '/cognition/'], ['Patient resources', '/resources/'], ['Contact', '/contact/']].map(([label, href]) => <Link onClick={() => setMobile(false)} key={href} href={href}>{label}<ArrowUpRight size={18} /></Link>)}
         <a href={clinic.phoneHref}>Call {clinic.phone}<ArrowUpRight size={18} /></a>
       </motion.nav>}</AnimatePresence>

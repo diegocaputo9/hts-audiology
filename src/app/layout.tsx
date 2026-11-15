@@ -1,6 +1,8 @@
 import { publicAsset } from '@/lib/public-asset';
 
 import type { Metadata } from 'next';
+import type { CSSProperties } from 'react';
+import { motionTiming } from '@/lib/motion';
 import '@fontsource-variable/manrope';
 import './globals.css';
 import { Header, Footer, SiteMotion } from '@/components/site-shell';
@@ -15,5 +17,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body><SiteMotion><a href="#main" className="skip-link">Skip to content</a><Header /><main id="main">{children}</main><Footer /></SiteMotion></body></html>;
+  return <html lang="en" style={{ '--press-duration': `${motionTiming.press * 1000}ms`, '--reveal-duration': `${motionTiming.reveal * 1000}ms`, '--scene-duration': `${motionTiming.scene * 1000}ms` } as CSSProperties}><body><SiteMotion><a href="#main" className="skip-link">Skip to content</a><Header /><main id="main">{children}</main><Footer /></SiteMotion></body></html>;
 }

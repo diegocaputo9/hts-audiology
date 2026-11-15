@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { Plus, ArrowUpRight } from 'lucide-react';
 import { useReducedMotion } from 'motion/react';
 import { ServiceSymbol } from './service-symbol';
+import { Reveal } from './motion-parts';
+import { motionTiming } from '@/lib/motion';
 
 export const primaryServices = [
   {
@@ -101,14 +103,14 @@ function ServiceDisclosure({ service }: { service: Service }) {
     element.style.overflow = 'hidden';
     const easing = getComputedStyle(document.documentElement).getPropertyValue('--ease').trim();
     const distance = Math.abs(end - start) / Math.max(1, naturalHeight - collapsedHeight);
-    const duration = Math.max(120, (open ? 280 : 240) * Math.min(1, distance));
+    const duration = Math.max(motionTiming.press * 1000, motionTiming.reveal * 1000 * Math.min(1, distance));
     const active = element.animate(
       [{ height: `${start}px` }, { height: `${end}px` }],
       { duration, easing, fill: 'both' },
     );
     const reveal = body.animate(
       [{ opacity }, { opacity: open ? 1 : .65 }],
-      { duration: Math.min(200, duration), easing, fill: 'both' },
+      { duration: Math.min(motionTiming.reveal * 1000, duration), easing, fill: 'both' },
     );
     animation.current = active;
     fade.current = reveal;
@@ -150,9 +152,9 @@ function ServiceDisclosure({ service }: { service: Service }) {
 export function ServiceDetails({ hearingOnly = false }: { hearingOnly?: boolean }) {
   return <section className="service-details-section section-space" aria-labelledby="primary-services-heading">
     <div className="container">
-      <div className="section-intro"><h2 id="primary-services-heading">The care you need.<br />Clearly explained.</h2><p>Hearing exams, hearing aids, ear cleaning, and more.<br />Select a service to explore what’s involved.</p></div>
+      <Reveal className="section-intro"><h2 id="primary-services-heading">The care you need.<br />Clearly explained.</h2><p>Hearing exams, hearing aids, ear cleaning, and more.<br />Select a service to explore what’s involved.</p></Reveal>
       <p className="service-visit-formats">Clinic, home visits, and telecare are available. Ask the team which format suits your needs.</p>
-      <div className="service-disclosures">{primaryServices.filter(service => !hearingOnly || service.id !== 'tinnitus-treatment').map(service => <ServiceDisclosure key={service.id} service={service} />)}</div>
+      <Reveal className="service-disclosures">{primaryServices.filter(service => !hearingOnly || service.id !== 'tinnitus-treatment').map(service => <ServiceDisclosure key={service.id} service={service} />)}</Reveal>
     </div>
   </section>;
 }

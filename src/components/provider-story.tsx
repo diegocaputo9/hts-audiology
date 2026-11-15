@@ -10,7 +10,6 @@ export function ProviderStory({ children }: { children: ReactNode }) {
     if (!root) return;
     const portrait = root.querySelector<HTMLElement>('.provider-portrait')!;
     const photo = portrait.querySelector('img')!;
-    const caption = portrait.querySelector<HTMLElement>('.portrait-caption')!;
     const bio = root.querySelector<HTMLElement>('.provider-copy')!;
     const backdrop = root.querySelector<HTMLElement>('.portrait-arch')!;
     const mobile = matchMedia('(max-width:600px)');
@@ -34,13 +33,7 @@ export function ProviderStory({ children }: { children: ReactNode }) {
       const constrainedTop = Math.min(stickyTop, rect.bottom - portrait.offsetHeight);
       portrait.style.transform = `translateY(${Math.min(0, stickyTop - release - constrainedTop)}px)`;
       const bioRect = bio.getBoundingClientRect();
-      const portraitRect = portrait.getBoundingClientRect();
-      const faceBottom = Math.min(header + band, portraitRect.top + crop + band);
-      // Carry the name card along the bio's leading edge, then tuck it below the face.
-      caption.style.transform = `translateY(${Math.min(0, bioRect.top - portraitRect.bottom)}px)`;
-      const captionRect = caption.getBoundingClientRect();
-      const captionClip = Math.max(0, Math.min(captionRect.height, Math.max(header, faceBottom) - captionRect.top));
-      caption.style.clipPath = `inset(${captionClip}px 0 0)`;
+      const faceBottom = Math.min(header + band, portrait.getBoundingClientRect().top + crop + band);
       const clipped = Math.max(0, Math.min(bioRect.height, Math.max(header, faceBottom) - bioRect.top));
       bio.style.clipPath = `inset(${clipped}px 0 0)`;
       if (!nativeTimeline) {
@@ -54,8 +47,6 @@ export function ProviderStory({ children }: { children: ReactNode }) {
       root!.dataset.mobileStory = String(enabled);
       if (!enabled) {
         portrait.style.transform = '';
-        caption.style.transform = '';
-        caption.style.clipPath = '';
         bio.style.clipPath = '';
         backdrop.style.clipPath = '';
         return;

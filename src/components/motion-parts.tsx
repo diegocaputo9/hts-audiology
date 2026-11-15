@@ -7,10 +7,11 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowUpRight, Pause, Play, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { clinic } from '@/lib/clinic';
+import { motionTiming, motionEase } from '@/lib/motion';
 
 export function Reveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const reduce = useReducedMotion();
-  return <motion.div className={className} initial={false} whileInView={reduce ? {} : { opacity: [.7, 1] }} viewport={{ once: true, amount: .15 }} transition={{ duration: .65, delay, ease: [0.16, 1, 0.3, 1] }}>{children}</motion.div>;
+  return <motion.div className={className} initial={false} whileInView={reduce ? { opacity: 1 } : { opacity: [.9, 1] }} viewport={{ once: true, amount: .15 }} transition={{ type: 'tween', duration: reduce ? 0 : motionTiming.reveal, delay: reduce ? 0 : delay, ease: motionEase }}>{children}</motion.div>;
 }
 
 export function Hero() {

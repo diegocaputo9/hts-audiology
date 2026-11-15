@@ -16,7 +16,7 @@ const pageTitles: Record<string, string> = { about:'Our people', hearing:'Hearin
 export function generateStaticParams() { return Object.keys(pageTitles).map(slug => ({ slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; return { title: pageTitles[slug] || 'Page not found' }; }
 
-function PageHeading({ title, description, crumb }: { title: string; description?: string; crumb: string }) { return <div className="page-heading"><div className="breadcrumb"><Link href="/">Home</Link><ChevronRight size={11} /><span>{crumb}</span></div><h1>{title}</h1>{description && <p>{description}</p>}</div>; }
+function PageHeading({ title, description, crumb }: { title: string; description?: string; crumb: string }) { return <Reveal className="page-heading"><div className="breadcrumb"><Link href="/">Home</Link><ChevronRight size={11} /><span>{crumb}</span></div><h1>{title}</h1>{description && <p>{description}</p>}</Reveal>; }
 function PageCTA({ tinnitus = false }: { tinnitus?: boolean }) { return <div className="container"><div className="page-cta"><div><h2>{tinnitus ? 'Let’s make space for some quiet.' : 'Start with a conversation.'}</h2><p>Personal care begins with understanding you.</p></div><Link className="button" href="/book/">Book your visit <ArrowUpRight size={17} /></Link></div></div>; }
 
 export default async function ContentPage({ params }: { params: Promise<{ slug: string }> }) {
